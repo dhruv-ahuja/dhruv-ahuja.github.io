@@ -1,18 +1,6 @@
-{% import "macros/macros.html" as post_macros %}
+{% extends "base.html" %}
 
-<!DOCTYPE html>
-<html>
-{% include "partials/header.html" %}
-
-<body>
-    <div class="content">
-        {% include "partials/nav.html" %}
-
-        {# Post page is the default #}
-        {% block main_content %}
-            Nothing here?!
-        {% endblock main_content %}
-    </div>
-</body>
-
-</html>
+{% block main_content %}
+    <!-- * using the section component as substitute for the homepage -->
+    {{ post_macros::content(page=section) }}
+{% endblock main_content %}
