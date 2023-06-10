@@ -10,7 +10,7 @@ I am currently enjoying working on some pet projects, learning about Rust and fu
 
 # Interests
 I was learning Spanish and French before pivoting to tech, it has been two years now but I still listen to Spanish songs on a regular basis. Reading is a big passion of mine and I’m currently reading the Witcher series and also going through [Programming Rust](https://www.oreilly.com/library/view/programming-rust-2nd/9781492052586/).  
-I’m also into audio-gear – [Creative Pebble V3](https://en.creative.com/p/speakers/creative-pebble-v3) for the desk and the [Truthear X Crinacle Zero](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwi8uO6RxbP_AhXRbmwGHWQwCCMQFnoECBIQAQ&url=https%3A%2F%2Fshenzhenaudio.com%2Fproducts%2Ftruthear-zero-earphone-dual-dynamic-drivers-pu-lcp-composite-diaphragm-in-ear-headphone&usg=AOvVaw2VLBfdHxX_AAdxr24b2hVi), EQd to Project Red V3, for mostly all other occasions. Both of these options are great value products and I’m super happy with them, for the time being :P   
+I’m also into audio-gear – [Creative Pebble V3](https://en.creative.com/p/speakers/creative-pebble-v3) for the desk and the [Truthear X Crinacle Zero](https://shenzhenaudio.com/products/truthear-zero-earphone-dual-dynamic-drivers-pu-lcp-composite-diaphragm-in-ear-headphone), EQd to Project Red V3, for mostly all other occasions. Both of these options are great value products and I’m super happy with them, for the time being :P   
 I would like also like to splurge a bit on a cool mechanical keyboard but my current one works fine except for a few keys, so we wait...
 
 # Contact
