@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://dhruv-ahuja.github.io/</loc>
+    </url>
+    <url>
+        <loc>https://dhruv-ahuja.github.io/posts/</loc>
+    </url>
+    <url>
+        <loc>https://dhruv-ahuja.github.io/posts/first-open-source-contribution/</loc>
+        <lastmod>2023-06-11</lastmod>
+    </url>
+    <url>
+        <loc>https://dhruv-ahuja.github.io/posts/page/1/</loc>
+    </url>
+    <url>
+        <loc>https://dhruv-ahuja.github.io/projects/</loc>
+    </url>
+    <url>
+        <loc>https://dhruv-ahuja.github.io/projects/password-manager/</loc>
+    </url>
+    <url>
+        <loc>https://dhruv-ahuja.github.io/projects/series-lookup/</loc>
+    </url>
+    <url>
+        <loc>https://dhruv-ahuja.github.io/projects/spoti-dl/</loc>
+    </url>
+</urlset>
