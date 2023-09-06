@@ -7,6 +7,10 @@ minify_html = true
 
 theme = "apollo-custom"
 
+[markdown]
+highlight_code = true
+highlight_theme = "material-dark"
+
 [extra]
 menu = [
     { name = "/posts", url = "/posts", weight = 1 },
