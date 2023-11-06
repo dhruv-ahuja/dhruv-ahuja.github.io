@@ -1,6 +1,6 @@
 +++
-title = "Writing Rust Bindings for My CLI App"
-description = "Walk through my experience of writing Rust FFI for my song downloader application"
+title = "Writing Rust Bindings for My Python App"
+description = "Walk through my experience of writing Rust FFI for my Python CLI application"
 date = "2023-11-06"
 +++
 
