@@ -26,7 +26,7 @@ pub fn add_metadata<P, S>(
 {...}
 ```
 
-I mainly struggled when implementing the async logic to download songs in parallel, due to my inexperience with writing async code in Rust. I had to spend a lot of time working with the compiler’s restrictions and [Tokio’s](https://tokio.rs/ "https://tokio.rs/") `’static + Send + Sync` lifetime requirements for spawning tasks, as its work-stealing scheduler model means that a task running in one thread could be picked up by another thread. I used `tokio::task::block_in_place` to wrap the `add_metadata` function call as the [lofty](https://github.com/Serial-ATA/lofty-rs "https://github.com/Serial-ATA/lofty-rs") crate does not support async.
+I mainly struggled when implementing the async logic to download songs in parallel, due to my inexperience with writing async code in Rust. I had to spend a lot of time working with the compiler’s restrictions and [Tokio’s](https://tokio.rs/ "https://tokio.rs/") `’static + Send` requirements for spawning tasks, as its work-stealing scheduler model means that a task running in one thread could be picked up by another thread. I used `tokio::task::block_in_place` to wrap the `add_metadata` function call as the [lofty](https://github.com/Serial-ATA/lofty-rs "https://github.com/Serial-ATA/lofty-rs") crate does not support async.
 
 I added a CLI flag, allowing users to specify the number of tasks to use to process parallel downloads, and used batch downloads of 100 songs for playlists, as they can contain several thousands of songs.
 
