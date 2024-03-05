@@ -1,6 +1,6 @@
 +++
-title = "Tag-Based Python Webapp's CI/CD Pipeline"
-description = "A Python-based CI/CD pipeline using GitHub Actions, triggering on Git Tag Pushes"
+title = "Tag-Based Python CI/CD Pipeline"
+description = "Setting up a Python CI/CD pipeline using GitHub Actions, triggering on Git Tag Pushes"
 date = "2024-03-05"
 +++
 
