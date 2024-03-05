@@ -1,6 +1,6 @@
 +++
 title = "Tag-Based Python CI/CD Pipeline"
-description = "Setting up a Python CI/CD pipeline using GitHub Actions, triggering on Git Tag Pushes"
+description = "A guide to setting up a CI/CD pipeline for Python using GitHub Actions, that runs on Git tag pushes. Also includes a step to handle CI pipeline failures through a step that allows SSHing into the workflow runner instance."
 date = "2024-03-05"
 +++
 
@@ -125,7 +125,7 @@ I am using `Ruff` as the formatter and linter of choice, it is very fast and I
 
 The next two steps check for formatting and lint errors in the code and stop the workflow in case of any errors. This ensures that contributing developers adhere to Ruff’s code quality standards.
 
-The last step is optional, and only runs if any of the previous steps fails. It allows us to ssh into the currently ongoing workflow session to debug issues. Be careful though, it kept running for quite a while since I forgot to cancel the workflow run manually.  I am not sure if it has a time limit or it keeps running indefinitely.
+The last step is optional, and only runs if any of the previous steps fails. It allows us to ssh into the currently ongoing workflow session to check the environment and debug issues. Be careful though, it kept running for quite a while since I forgot to cancel the workflow run manually.  I am not sure if it has a time limit or it keeps running indefinitely.
 
 ## Creating the CD workflow
 
