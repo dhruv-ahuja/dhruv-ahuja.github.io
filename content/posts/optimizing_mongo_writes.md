@@ -24,10 +24,6 @@ Calling `save_item_data`, It takes us an average of **1216 seconds** or **20
 
 Each save call requires network round trips between the app and the database, and database processing time. These accumulate rapidly as we save a large number of documents one-by-one.
 
-## A Failed Approach: Running One Large Transaction
-
-As the second approach, I tried running one single transaction while still saving documents one-by-one, which timed out as the default MongoDB transaction time limit is 60 seconds, and it is not configureable on the free tier (learned this the hard way after reading about and trying a bunch of things for over an hour). This made it clear to me that transactions **should not** be run this way, and that this approach is completely incorrect.
-
 ## The Good Approach: Bulk Insertions
 
 The modified script using approach is [available here](https://github.com/dhruv-ahuja/backend_burger/blob/d88fecd8a44626445f56131544307abee500a98a/src/scripts/poe_initial.py "https://github.com/dhruv-ahuja/backend_burger/blob/d88fecd8a44626445f56131544307abee500a98a/src/scripts/poe_initial.py"). I found using `insertMany` for bulk-inserts the most common and the most impactful approach, when I looked for improvement advice. Pushing all DB instances to an array and bulk-inserting them all at once, took us just ~10.7 seconds!  This is an incredible improvement and should be the first choice if you need to insert multiple documents.
