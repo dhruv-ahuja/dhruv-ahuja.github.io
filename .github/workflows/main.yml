@@ -1,6 +1,10 @@
-# On every push this script is executed
 on: push
 name: Build and deploy GH Pages
+
+permissions:
+    id-token: write
+    contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
