@@ -1,0 +1,117 @@
+<!doctype html><html><head><meta charset=UTF-8><meta content="IE=edge" http-equiv=X-UA-Compatible><meta content="width=device-width,initial-scale=1.0" name=viewport><title>
+         Tag-Based Python CI/CD Pipeline
+        
+    </title><meta content="Tag-Based Python CI/CD Pipeline" property=og:title><meta content="A guide to setting up a CI/CD pipeline for Python using GitHub Actions, that runs on Git tag pushes. Also includes a step to handle CI pipeline failures through a step that allows SSHing into the workflow runner instance." property=og:description><meta content="A guide to setting up a CI/CD pipeline for Python using GitHub Actions, that runs on Git tag pushes. Also includes a step to handle CI pipeline failures through a step that allows SSHing into the workflow runner instance." name=description><link href=https://dhruvahuja.me/fonts.css rel=stylesheet><script async data-goatcounter=https://dhruv-ahuja.goatcounter.com/count src=https://dhruvahuja.me/js/count.js></script><noscript><img src="https://dhruv-ahuja.goatcounter.com//count?p=/posts/tag-based-ci-cd-pipeline/&t=Tag-Based Python CI/CD Pipeline"></noscript><link href=https://dhruvahuja.me/atom.xml rel=alternate title=dhruv-ahuja type=application/atom+xml><link href=https://dhruvahuja.me/main.css media=screen rel=stylesheet><link href=https://dhruvahuja.me/theme/light.css rel=stylesheet><link media="(prefers-color-scheme: dark)" href=https://dhruvahuja.me/theme/dark.css rel=stylesheet><script src=https://dhruvahuja.me/js/feather.min.js></script><body><div class=content><header><div class=main><a href=https://dhruvahuja.me>dhruv-ahuja</a><div class=socials><a class=social href=mailto:dhruvahuja2k@gmail.com rel=me target=_blank> <img alt=email src=/social_icons/email.svg> </a><a class=social href=https://www.linkedin.com/in/dhruvahuja2k/ rel=me target=_blank> <img alt=linkedin src=/social_icons/linkedin.svg> </a><a class=social href=https://github.com/dhruv-ahuja/ rel=me target=_blank> <img alt=github src=/social_icons/github.svg> </a></div></div><nav><a href=/posts style=margin-left:.7em>/posts</a><a href=/projects style=margin-left:.7em>/projects</a> | <a href id=dark-mode-toggle onclick=toggleTheme()></a><script src=https://dhruvahuja.me/js/themetoggle.js></script></nav></header><main><article><div class=title><div class=page-header>Tag-Based Python CI/CD Pipeline<span class=primary-color style=font-size:1.6em>.</span></div><div class=meta>Posted on <time>05-03-2024</time></div></div><section class=body><h2 id=introduction>Introduction</h2><p>I recently setup a CI/CD pipeline using <a href=https://docs.github.com/en/actions/quickstart title=https://docs.github.com/en/actions/quickstart>GitHub Actions</a>, to automate code quality management, testing and Docker image deployment for <a href=https://github.com/dhruv-ahuja/backend_burger title=https://github.com/dhruv-ahuja/backend_burger>my Python webapp</a>. The CI workflow triggers on every commit to the <code>main</code> branch and formats, lints and tests the code. It uses a Redis <a href=https://docs.github.com/en/actions/using-containerized-services/about-service-containers title=https://docs.github.com/en/actions/using-containerized-services/about-service-containers>service container</a> since the integration tests call the API endpoints, which use a caching layer before accessing the database. It also uses an action step to debug failures. The CD workflow runs on new tag pushes to the repository. Both workflows can also be run manually.<p>Let’s get started with the setup.<h2 id=initial-setup>Initial Setup</h2><p>Create a Docker Hub repository to push the images to, and generate a <code>read-write</code> scope Access Token for use with the workflows. Copy the token for use in the next step.<p>Next, setup environment secrets so that our application can access these values during the testing step. Go to the <code>Settings</code> → <code>Secrets and variables</code> → <code>Actions</code> panel in the GitHub repository and define the any repository secrets required during the workflow’s execution. Also define the Docker username and password secrets here. Use the access token generated above for <code>DOCKER_PASSWORD</code>.<p><img alt="Manage Repository Secrets" src=/images/repository_secrets.png><h2 id=creating-the-ci-workflow>Creating the CI Workflow</h2><p>Create a <code>.github/workflows</code> folder in your local codebase and a <code>ci.yml</code>  file, adding the following code at the top of the file:<pre class=language-yaml data-lang=yaml style=background:#212121;color:#eeffff><code class=language-yaml data-lang=yaml><span style=color:#f07178>name</span><span style=color:#89ddff>: </span><span style=color:#c3e88d>CI
+</span><span>
+</span><span style=color:#f78c6c>on</span><span style=color:#89ddff>:
+</span><span>    </span><span style=color:#f07178>push</span><span style=color:#89ddff>:
+</span><span>        </span><span style=color:#f07178>branches</span><span style=color:#89ddff>: </span><span style=color:#c3e88d>main
+</span><span>    
+</span><span>    </span><span style=color:#f07178>workflow_dispatch</span><span style=color:#89ddff>: {}
+</span><span>
+</span><span style=color:#f07178>concurrency</span><span style=color:#89ddff>:
+</span><span>    </span><span style=color:#f07178>group</span><span style=color:#89ddff>: </span><span style=color:#c3e88d>${{ github.workflow }}-${{ github.ref }}
+</span><span>    </span><span style=color:#f07178>cancel-in-progress</span><span style=color:#89ddff>: </span><span style=color:#f78c6c>true
+</span></code></pre><p>This defines that the <code>CI</code> workflow runs only when code is pushed to the <code>main</code> branch. <code>workflow_dispatch: {}</code>  allows us to run the workflow manually from the <code>Actions</code> page. Our <code>concurrency</code> configuration ensures that the workflow’s runs are grouped together under one Git reference value and that only one run happens at a time. If a workflow is underway and another is triggered, the current run is cancelled in favour of the newer run.<p>Next, define the list of environment variables required by the application like so:<pre class=language-yaml data-lang=yaml style=background:#212121;color:#eeffff><code class=language-yaml data-lang=yaml><span style=color:#f07178>env</span><span style=color:#89ddff>:
+</span><span>    </span><span style=color:#f07178>DB_URL</span><span style=color:#89ddff>: </span><span style=color:#c3e88d>${{secrets.DB_URL}}
+</span><span>    </span><span style=color:#f07178>JWT_SECRET_KEY</span><span style=color:#89ddff>: </span><span style=color:#c3e88d>${{secrets.JWT_SECRET_KEY}}
+</span><span>    </span><span style=color:#f07178>AWS_ACCESS_KEY_ID</span><span style=color:#89ddff>: </span><span style=color:#c3e88d>${{secrets.AWS_ACCESS_KEY_ID}}
+</span><span>    </span><span style=color:#f07178>AWS_SECRET_ACCESS_KEY</span><span style=color:#89ddff>: </span><span style=color:#c3e88d>${{secrets.AWS_SECRET_ACCESS_KEY}}
+</span><span>    </span><span style=color:#f07178>AWS_REGION_NAME</span><span style=color:#89ddff>: </span><span style=color:#c3e88d>${{secrets.AWS_REGION_NAME}}
+</span><span>    </span><span style=color:#f07178>SQS_QUEUE_NAME</span><span style=color:#89ddff>: </span><span style=color:#c3e88d>${{secrets.SQS_QUEUE_NAME}}
+</span><span>    </span><span style=color:#f07178>S3_BUCKET_URL</span><span style=color:#89ddff>: </span><span style=color:#c3e88d>${{secrets.S3_BUCKET_URL}}
+</span><span>    </span><span style=color:#f07178>S3_BUCKET_NAME</span><span style=color:#89ddff>: </span><span style=color:#c3e88d>${{secrets.S3_BUCKET_NAME}}
+</span><span>    </span><span style=color:#f07178>S3_LOGS_FOLDER</span><span style=color:#89ddff>: </span><span style=color:#c3e88d>${{secrets.S3_LOGS_FOLDER}}
+</span><span>    </span><span style=color:#f07178>REDIS_HOST</span><span style=color:#89ddff>: </span><span style=color:#c3e88d>localhost
+</span></code></pre><p>We define environment variables by reading the repository secrets we set in the initial setup section, with the exception of <code>REDIS_HOST</code>, which is set to <code>localhost</code> to enable our application access to the Redis service.<p>Now comes the main part for the CI logic, the job itself:<pre class=language-yaml data-lang=yaml style=background:#212121;color:#eeffff><code class=language-yaml data-lang=yaml><span style=color:#f07178>jobs</span><span style=color:#89ddff>:
+</span><span>    </span><span style=color:#f07178>build</span><span style=color:#89ddff>:
+</span><span>        </span><span style=color:#f07178>runs-on</span><span style=color:#89ddff>: </span><span style=color:#c3e88d>ubuntu-latest
+</span><span>        
+</span><span>        </span><span style=color:#f07178>services</span><span style=color:#89ddff>:
+</span><span>            </span><span style=font-style:italic;color:#4a4a4a># Label used to access the service container
+</span><span>            </span><span style=color:#f07178>redis</span><span style=color:#89ddff>:
+</span><span>                </span><span style=color:#f07178>image</span><span style=color:#89ddff>: </span><span style=color:#c3e88d>redis
+</span><span>                </span><span style=font-style:italic;color:#4a4a4a># Set health checks to wait until redis has started
+</span><span>                </span><span style=color:#f07178>options</span><span style=color:#89ddff>: </span><span style=font-style:italic;color:#c792ea>></span><span style=color:#c792ea>-
+</span><span style=color:#c3e88d>                    --health-cmd "redis-cli ping"
+</span><span style=color:#c3e88d>                    --health-interval 10s
+</span><span style=color:#c3e88d>                    --health-timeout 5s
+</span><span style=color:#c3e88d>                    --health-retries 5
+</span><span style=color:#c3e88d>
+</span><span>                </span><span style=color:#f07178>ports</span><span style=color:#89ddff>:
+</span><span>                    </span><span style=color:#89ddff>- </span><span style=color:#c3e88d>6379:6379
+</span><span>
+</span><span>        </span><span style=color:#f07178>steps</span><span style=color:#89ddff>:
+</span><span>            </span><span style=color:#89ddff>- </span><span style=color:#f07178>name</span><span style=color:#89ddff>: </span><span style=color:#c3e88d>Checkout
+</span><span>              </span><span style=color:#f07178>uses</span><span style=color:#89ddff>: </span><span style=color:#c3e88d>actions/checkout@v4
+</span><span>
+</span><span>            </span><span style=color:#89ddff>- </span><span style=color:#f07178>name</span><span style=color:#89ddff>: </span><span style=color:#c3e88d>Setup Python
+</span><span>              </span><span style=color:#f07178>uses</span><span style=color:#89ddff>: </span><span style=color:#c3e88d>actions/setup-python@v4
+</span><span>              </span><span style=color:#f07178>with</span><span style=color:#89ddff>:
+</span><span>                </span><span style=color:#f07178>python-version</span><span style=color:#89ddff>: "</span><span style=color:#c3e88d>3.11</span><span style=color:#89ddff>"
+</span><span>                </span><span style=color:#f07178>cache</span><span style=color:#89ddff>: "</span><span style=color:#c3e88d>pip</span><span style=color:#89ddff>"
+</span><span>            
+</span><span>            </span><span style=color:#89ddff>- </span><span style=color:#f07178>name</span><span style=color:#89ddff>: </span><span style=color:#c3e88d>Install PyCurl Dependencies
+</span><span>              </span><span style=color:#f07178>run</span><span style=color:#89ddff>: 
+</span><span>                </span><span style=color:#c3e88d>sudo apt-get update && sudo apt-get install -y curl libcurl4-openssl-dev build-essential libssl-dev
+</span><span>
+</span><span>            </span><span style=color:#89ddff>- </span><span style=color:#f07178>name</span><span style=color:#89ddff>: </span><span style=color:#c3e88d>Install Dependencies
+</span><span>              </span><span style=color:#f07178>run</span><span style=color:#89ddff>:
+</span><span>                </span><span style=color:#c3e88d>python -m pip install --upgrade pip
+</span><span>                </span><span style=color:#c3e88d>pip install -r requirements.txt
+</span><span>            
+</span><span>            </span><span style=color:#89ddff>- </span><span style=color:#f07178>name</span><span style=color:#89ddff>: </span><span style=color:#c3e88d>Test code
+</span><span>              </span><span style=color:#f07178>run</span><span style=color:#89ddff>: 
+</span><span>                </span><span style=color:#c3e88d>pytest . -s -v -W ignore
+</span><span>            
+</span><span>            </span><span style=color:#89ddff>- </span><span style=color:#f07178>name</span><span style=color:#89ddff>: </span><span style=color:#c3e88d>Check Code Formatting
+</span><span>              </span><span style=color:#f07178>run</span><span style=color:#89ddff>:
+</span><span>                </span><span style=color:#c3e88d>ruff format --line-length=120 --check . 
+</span><span>            
+</span><span>            </span><span style=color:#89ddff>- </span><span style=color:#f07178>name</span><span style=color:#89ddff>: </span><span style=color:#c3e88d>Check Code Linting
+</span><span>              </span><span style=color:#f07178>run</span><span style=color:#89ddff>: 
+</span><span>                </span><span style=color:#c3e88d>ruff check .
+</span><span>            
+</span><span>            </span><span style=color:#89ddff>- </span><span style=color:#f07178>name</span><span style=color:#89ddff>: </span><span style=color:#c3e88d>Setup Tmate Session
+</span><span>              </span><span style=color:#f07178>if</span><span style=color:#89ddff>: </span><span style=color:#c3e88d>${{ failure() }}
+</span><span>              </span><span style=color:#f07178>uses</span><span style=color:#89ddff>: </span><span style=color:#c3e88d>mxschmitt/action-tmate@v3
+</span></code></pre><p>Let’s walk through the job’s specifics, step-by-step.<p>The Redis service logic sets up a Redis container with health check options to ensure that the workflow waits for it to boot up, and exposes port <code>6379</code> to make it accessible to the application when we run the tests.<p><code>Checkout</code> makes the repository’s code available to the workflow, and <code>Setup Python</code> setups the specific Python version — <code>3.11</code> in our case — and caches the dependencies installed by <code>pip</code> to make future workflow runs faster. <code>Install Pycurl Dependencies</code> installs the dependencies required by the <code>pycurl</code> Python library on Ubuntu. The following step installs the Python dependencies used by our application.<p>The code testing step runs the <code>pytest</code> test suite gathers and runs all tests in the current directory. My project has a few unit tests and integration tests for each API endpoint. The <code>-s</code> flag outputs any Python print statements to the stdout stream, and <code>-v</code> runs the tests in verbose mode, giving us a detailed overview of the ongoing tests. I have added <code>-W ignore</code> to ignore the warnings emitted during the execution of the tests, primarily to help avoid the <code>Pydantic v1 deprecation warnings</code> issued for third party libraries.<p>I am using <code>Ruff</code> as the formatter and linter of choice, it is very fast and I feel that it has good linting rules without being overly restrictive. It is easy to setup formatting, lint and type checks in editors and is a one-time setup and I feel that it really helps keep the codebase maintainable in the long run.<p>The next two steps check for formatting and lint errors in the code and stop the workflow in case of any errors. This ensures that contributing developers adhere to Ruff’s code quality standards.<p>The last step is optional, and only runs if any of the previous steps fails. It allows us to ssh into the currently ongoing workflow session to check the environment and debug issues. Be careful though, it kept running for quite a while since I forgot to cancel the workflow run manually.  I am not sure if it has a time limit or it keeps running indefinitely.<h2 id=creating-the-cd-workflow>Creating the CD workflow</h2><p> The CD pipeline is quite straightforward:<pre class=language-yaml data-lang=yaml style=background:#212121;color:#eeffff><code class=language-yaml data-lang=yaml><span style=color:#f07178>name</span><span style=color:#89ddff>: </span><span style=color:#c3e88d>CD
+</span><span>
+</span><span style=color:#f78c6c>on</span><span style=color:#89ddff>:
+</span><span>    </span><span style=color:#f07178>push</span><span style=color:#89ddff>:
+</span><span>        </span><span style=color:#f07178>tags</span><span style=color:#89ddff>: "</span><span style=color:#c3e88d>v*</span><span style=color:#89ddff>"
+</span><span>
+</span><span>    </span><span style=font-style:italic;color:#4a4a4a># allow manually triggering this workflow
+</span><span>    </span><span style=color:#f07178>workflow_dispatch</span><span style=color:#89ddff>: {}
+</span><span>
+</span><span style=color:#f07178>concurrency</span><span style=color:#89ddff>:
+</span><span>    </span><span style=color:#f07178>group</span><span style=color:#89ddff>: </span><span style=color:#c3e88d>${{ github.workflow }}-${{ github.ref }}
+</span><span>    </span><span style=color:#f07178>cancel-in-progress</span><span style=color:#89ddff>: </span><span style=color:#f78c6c>true
+</span><span>
+</span><span style=color:#f07178>jobs</span><span style=color:#89ddff>:
+</span><span>    </span><span style=color:#f07178>deploy</span><span style=color:#89ddff>:
+</span><span>        </span><span style=color:#f07178>runs-on</span><span style=color:#89ddff>: </span><span style=color:#c3e88d>ubuntu-latest
+</span><span>
+</span><span>        </span><span style=color:#f07178>steps</span><span style=color:#89ddff>:
+</span><span>            </span><span style=color:#89ddff>- </span><span style=color:#f07178>name</span><span style=color:#89ddff>: </span><span style=color:#c3e88d>Checkout
+</span><span>              </span><span style=color:#f07178>uses</span><span style=color:#89ddff>: </span><span style=color:#c3e88d>actions/checkout@v4
+</span><span>
+</span><span>            </span><span style=color:#89ddff>- </span><span style=color:#f07178>name</span><span style=color:#89ddff>: </span><span style=color:#c3e88d>Log into Docker Hub
+</span><span>              </span><span style=color:#f07178>uses</span><span style=color:#89ddff>: </span><span style=color:#c3e88d>docker/login-action@v3
+</span><span>              </span><span style=color:#f07178>with</span><span style=color:#89ddff>:
+</span><span>                </span><span style=color:#f07178>username</span><span style=color:#89ddff>: </span><span style=color:#c3e88d>${{secrets.DOCKER_USERNAME}}
+</span><span>                </span><span style=color:#f07178>password</span><span style=color:#89ddff>: </span><span style=color:#c3e88d>${{secrets.DOCKER_PASSWORD}}
+</span><span>
+</span><span>            </span><span style=color:#89ddff>- </span><span style=color:#f07178>name</span><span style=color:#89ddff>: </span><span style=color:#c3e88d>Get Latest Tag
+</span><span>              </span><span style=color:#f07178>id</span><span style=color:#89ddff>: </span><span style=color:#c3e88d>latest-tag
+</span><span>              </span><span style=color:#f07178>uses</span><span style=color:#89ddff>: "</span><span style=color:#c3e88d>WyriHaximus/github-action-get-previous-tag@v1</span><span style=color:#89ddff>"
+</span><span>              </span><span style=color:#f07178>with</span><span style=color:#89ddff>:
+</span><span>                </span><span style=color:#f07178>fallback</span><span style=color:#89ddff>: </span><span style=color:#c3e88d>latest
+</span><span>
+</span><span>            </span><span style=color:#89ddff>- </span><span style=color:#f07178>name</span><span style=color:#89ddff>: </span><span style=color:#c3e88d>Build and push Docker image
+</span><span>              </span><span style=color:#f07178>uses</span><span style=color:#89ddff>: </span><span style=color:#c3e88d>docker/build-push-action@v5
+</span><span>              </span><span style=color:#f07178>with</span><span style=color:#89ddff>:
+</span><span>                </span><span style=color:#f07178>push</span><span style=color:#89ddff>: </span><span style=color:#f78c6c>true
+</span><span>                </span><span style=color:#f07178>tags</span><span style=color:#89ddff>: </span><span style=color:#c3e88d>dhruvahuja/backend_burger:${{ steps.latest-tag.outputs.tag }}
+</span><span>                </span><span style=color:#f07178>labels</span><span style=color:#89ddff>: </span><span style=color:#c3e88d>${{steps.latest-tag.outputs.tag}}
+</span></code></pre><p>We define the workflow to either run manually or when a new tag prefixed by <code>v</code> is pushed to the repository, example. <code>v0.0.1</code>. <code>Checkout</code> is required to allow getting git tag in the third step. The next step reads the Docker username and password from repository secrets and logs us into Docker Hub. <code>Get Latest Tag</code> reads the tag which was just pushed, if the workflow was triggered by a tag push, otherwise defaulting to <code>latest</code>.<p>The final step builds the Docker image with the version tag and label, and pushes it to the Docker repository URL, defined in the <code>tags</code> directive. In this case, <code>dhruvahuja/backend_burger</code>.<h2 id=conclusion>Conclusion</h2><p>That’s it, our CI/CD pipeline is ready! There are Actions available for all sort of use-cases, and you can remove or add steps according to your needs. For example, you may choose to ssh into a server after the <code>Build and push Docker image</code> step to pull and run the new image. I did not add this particular step since I did not have a need for it at the moment.<p>I chose the tag-based approach for the deployment process since I wanted to deploy new images only on specific milestones, which I can manage with version tags.</section></article></main></div></body><footer><p>Made with <a href=https://www.getzola.org/ target=_blank>Zola</a>, using a <a href=https://github.com/dhruv-ahuja/apollo-custom target=_blank>custom variant</a> of the <a href=https://github.com/not-matthias/apollo target=_blank>Apollo</a> theme.</footer>
