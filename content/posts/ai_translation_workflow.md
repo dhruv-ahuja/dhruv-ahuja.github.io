@@ -19,7 +19,7 @@ The following is the output document’s translation structure:
 - original English text
 and so on until the end of the text
 
-The structure ensures that I am able to maintain a frame of reference to the original tone and language while I reading the Spanish text. This structure allows the formation of reference points between the flow of the Spanish text versus the English written language, and helps grasp tone and meaning effectively.
+The structure ensures that I am able to maintain a frame of reference to the original tone and language while I am reading the Spanish text. This structure allows the formation of reference points between the flow of the Spanish text versus the English written language, and helps grasp tone and meaning effectively.
 I’m certain there are better ways to learn the language but this has been quite interesting thus far.
 While I’m sure this is not the most efficient way to learn the language, I’ve found this approach to be quite engaging. The fact that I’m learning through something I built also gives me motivation.
 
