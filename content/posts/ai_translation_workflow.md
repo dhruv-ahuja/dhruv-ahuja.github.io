@@ -63,7 +63,8 @@ This hasn’t bothered me in practice, and I believe this can be corrected with 
 
 Observability data will help keep track of draw comparisons between usage costs of various models, when translating particular documents.
 
-![_Token usage and cost for a long, text-only article, observed in Pydantic Logfire_](/images/ai_translation/logfire.png)
+_Token usage and cost for a long, text-only article, observed in Pydantic Logfire_
+![Token usage and cost for a long, text-only article, observed in Pydantic Logfire](/images/ai_translation/logfire.png)
 
 ### Consuming the Output
 
@@ -76,7 +77,8 @@ docker run --env-file .env.deploy --network app-network --rm dhruvahuja/py_ai_tr
 The `app-network` Docker network connects the app to a shared Postgres instance, which stores crawled content, translated outputs, and metadata for future reference.
 A simple [Markdown Viewer Node webapp](https://feed.dhruvahuja.me/files) scans the output directory and lists all translated documents along with `#public` tagged notes, making them accessible via a clean web UI.
 
-![_Sample document output in the Markdown Viewer app, where `example.md` is the translated document_](/images/ai_translation/markdown_viewer.png)
+_Sample document output in the Markdown Viewer app, where `example.md` is the translated document_
+![Sample document output in the Markdown Viewer app, where `example.md` is the translated document](/images/ai_translation/markdown_viewer.png)
 
 ## Conclusion: AI For the Win
 
