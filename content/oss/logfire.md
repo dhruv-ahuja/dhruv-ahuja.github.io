@@ -4,5 +4,5 @@ description = "Contributed to the observability platform from the creators of Py
 weight = 1
 
 [extra]
-link_to = "https://github.com/pydantic/logfire"
+link_to = "https://github.com/pydantic/logfire/pulls?q=is%3Apr+author%3Adhruv-ahuja"
 +++

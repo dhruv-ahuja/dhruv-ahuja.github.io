@@ -4,5 +4,5 @@ description = "Contributed to the open-source 2D graphics editor with 21K+ stars
 weight = 2
 
 [extra]
-link_to = "https://github.com/GraphiteEditor/Graphite"
+link_to = "https://github.com/GraphiteEditor/Graphite/pulls?q=is%3Apr+author%3Adhruv-ahuja"
 +++
