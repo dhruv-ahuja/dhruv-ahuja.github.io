@@ -1,7 +1,7 @@
 +++
 title = "About Me"
 description = "this is the homepage"
-template = "index.html"
+template = "home.html"
 +++
 
 ## Tech
