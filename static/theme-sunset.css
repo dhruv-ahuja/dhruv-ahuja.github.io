@@ -70,7 +70,7 @@ a:hover {
 /* Exception for specific links that shouldn't have background color */
 .meta a:hover,
 .talks-grid a:hover,
-.cards a:hover {
+.cards a:not(.card-title a):hover {
   background-color: transparent !important;
   color: var(--primary-color) !important;
   text-decoration: underline;

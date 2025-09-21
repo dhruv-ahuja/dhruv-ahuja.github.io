@@ -6,4 +6,4 @@
 	url = https://github.com/not-matthias/apollo
 [submodule "themes/apollo"]
 	path = themes/apollo
-	url = https://github.com/not-matthias/apollo
+	url = https://github.com/dhruv-ahuja/apollo-custom.git
