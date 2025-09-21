@@ -4,7 +4,7 @@ description = "How I made my first OSS contribution while setting up my website"
 date = "2023-06-11"
 
 [taxonomies]
-tags = ["open-source", "contribution", "zola", "web-development"]
+tags = ["open-source", "web-development", "rust"]
 +++
 
 ## Intro

@@ -4,7 +4,7 @@ description = "Optimizing bulk-inserts for 30,000+ MongoDB documents in a Python
 date = "2024-05-21"
 
 [taxonomies]
-tags = ["mongodb", "database", "optimization", "python", "performance"]
+tags = ["database", "optimization", "python"]
 +++
 
 ## Introduction

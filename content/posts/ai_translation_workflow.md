@@ -4,7 +4,7 @@ description = "Outlining the translation workflow of my app, which crawls web co
 date = "2025-04-19"
 
 [taxonomies]
-tags = ["ai", "translation", "nlp", "python", "docker", "automation"]
+tags = ["ai", "python", "automation"]
 +++
 
 ## Introduction

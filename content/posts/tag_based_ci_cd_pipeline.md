@@ -4,7 +4,7 @@ description = "A guide to setting up a CI/CD pipeline for Python using GitHub Ac
 date = "2024-03-05"
 
 [taxonomies]
-tags = ["ci-cd", "github-actions", "docker", "python", "devops"]
+tags = ["devops", "github-actions", "python"]
 +++
 
 ## Introduction

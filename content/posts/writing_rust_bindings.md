@@ -4,7 +4,7 @@ description = "Walk through my experience of writing Rust FFI for my Python CLI 
 date = "2023-11-06"
 
 [taxonomies]
-tags = ["rust", "python", "ffi", "performance", "spoti-dl"]
+tags = ["rust", "python", "performance"]
 +++
 
 ## Introduction

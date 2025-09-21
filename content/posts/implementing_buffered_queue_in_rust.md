@@ -4,7 +4,7 @@ description = "Writing a custom implementation of a simple blocking, buffered qu
 date = "2023-09-06"
 
 [taxonomies]
-tags = ["rust", "concurrency", "data-structures", "multithreading"]
+tags = ["rust", "concurrency", "data-structures"]
 +++
 
 ## Introduction
