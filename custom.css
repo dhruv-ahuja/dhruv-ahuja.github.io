@@ -1,0 +1,147 @@
+/* Custom CSS to increase font size and social icon size */
+
+:root {
+  /* Increase base font size from 13.5px to 15px (more moderate increase) */
+  --font-size-base: 15px;
+}
+
+/* Increase social icon size from 16px to 18px (more proportional) */
+nav .left-nav .socials .social img {
+  width: 18px;
+  height: 18px;
+}
+
+/* Increase dark mode toggle icon size */
+#dark-mode-toggle > img {
+  width: 18px;
+  height: 18px;
+}
+
+/* Increase logo size */
+.logo > img {
+  height: 28px;
+}
+
+/* Styles for projects list view */
+.projects-list {
+  margin-top: 2rem;
+}
+
+.project-item {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.project-item:last-child {
+  border-bottom: none;
+}
+
+.project-title {
+  margin-bottom: 0.5rem;
+}
+
+.project-title a {
+  text-decoration: none;
+  color: var(--text-0);
+}
+
+.project-title a:hover {
+  text-decoration: underline;
+  color: var(--primary-color);
+}
+
+.project-description {
+  margin-bottom: 0.5rem;
+  color: var(--text-1);
+}
+
+.project-meta {
+  font-size: 0.9em;
+  color: var(--text-2);
+}
+
+/* Card styling improvements */
+.card {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  border-color: var(--primary-color);
+}
+
+.card-info {
+  flex: 1;
+  padding: 1.5rem;
+}
+
+.card-title {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.card-title a {
+  text-decoration: none;
+  color: var(--text-0);
+  background-color: transparent;
+  padding: 2px 4px;
+  border-radius: 2px;
+  transition: all 0.2s ease;
+}
+
+.card-title a:hover {
+  text-decoration: none;
+  color: var(--hover-color);
+  background-color: var(--primary-color);
+}
+
+.card-description {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.card-media {
+  max-height: 200px;
+  overflow: hidden;
+}
+
+.card-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .card-image {
+  transform: scale(1.05);
+}
+
+.card-video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Ensure selection colors work properly */
+::selection {
+  background-color: var(--primary-color);
+  color: var(--hover-color);
+}
+
+pre code::selection {
+  background-color: var(--primary-color);
+  color: var(--hover-color);
+}
+
+code::selection {
+  background-color: var(--primary-color);
+  color: var(--hover-color);
+}
