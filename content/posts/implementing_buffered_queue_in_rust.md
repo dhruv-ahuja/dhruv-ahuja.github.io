@@ -312,7 +312,7 @@ Finally, we receive return values of type [JoinHandle](https://doc.rust-lang.o
 
 Running `cargo run` will output the following:
 
-```plain
+```
 initializing consumer thread...
 initializing producer thread...
 pushed element

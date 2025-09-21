@@ -3,6 +3,7 @@
 :root {
   /* Increase base font size from 13.5px to 15px (more moderate increase) */
   --font-size-base: 15px;
+  --primary-color: #0066cc; /* Define a primary color if not already defined */
 }
 
 /* Increase social icon size from 16px to 18px (more proportional) */
@@ -91,11 +92,16 @@ nav .left-nav .socials .social img {
 .card-title a {
   text-decoration: none;
   color: var(--text-0);
+  background-color: transparent;
+  padding: 2px 4px;
+  border-radius: 2px;
+  transition: all 0.2s ease;
 }
 
 .card-title a:hover {
-  text-decoration: underline;
-  color: var(--primary-color);
+  text-decoration: none;
+  color: white;
+  background-color: var(--primary-color);
 }
 
 .card-description {
