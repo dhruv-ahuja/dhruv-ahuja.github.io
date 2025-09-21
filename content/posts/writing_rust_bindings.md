@@ -2,6 +2,9 @@
 title = "Writing Rust Bindings for My Python App"
 description = "Walk through my experience of writing Rust FFI for my Python CLI application"
 date = "2023-11-06"
+
+[taxonomies]
+tags = ["rust", "python", "performance"]
 +++
 
 ## Introduction

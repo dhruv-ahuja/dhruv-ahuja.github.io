@@ -1,6 +1,12 @@
 {% extends "base.html" %}
 
 {% block main_content %}
-    <!-- * using the section component as substitute for the homepage -->
-    {{ post_macros::content(page=section) }}
+    <main>
+        <article>
+            <section class="body">
+                {{ post_macros::page_header(title=section.title) }}
+                {{ section.content | safe }}
+            </section>
+        </article>
+    </main>
 {% endblock main_content %}

@@ -2,6 +2,9 @@
 title = "Implementing a Naive Buffered Queue in Rust"
 description = "Writing a custom implementation of a simple blocking, buffered queue in Rust"
 date = "2023-09-06"
+
+[taxonomies]
+tags = ["rust", "concurrency", "data-structures"]
 +++
 
 ## Introduction
@@ -309,7 +312,7 @@ Finally, we receive return values of type [JoinHandle](https://doc.rust-lang.o
 
 Running `cargo run` will output the following:
 
-```plaintext
+```
 initializing consumer thread...
 initializing producer thread...
 pushed element
