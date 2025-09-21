@@ -2,6 +2,9 @@
 title = "Tag-Based Python CI/CD Pipeline"
 description = "A guide to setting up a CI/CD pipeline for Python using GitHub Actions, that runs on Git tag pushes. Also includes a step to handle CI pipeline failures through a step that allows SSHing into the workflow runner instance."
 date = "2024-03-05"
+
+[taxonomies]
+tags = ["ci-cd", "github-actions", "docker", "python", "devops"]
 +++
 
 ## Introduction

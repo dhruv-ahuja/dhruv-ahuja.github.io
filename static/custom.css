@@ -69,6 +69,13 @@ nav .left-nav .socials .social img {
   border: 1px solid var(--border-color);
   border-radius: 4px;
   overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  border-color: var(--primary-color);
 }
 
 .card-info {
@@ -105,6 +112,11 @@ nav .left-nav .socials .social img {
   width: 100%;
   height: auto;
   display: block;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .card-image {
+  transform: scale(1.05);
 }
 
 .card-video {

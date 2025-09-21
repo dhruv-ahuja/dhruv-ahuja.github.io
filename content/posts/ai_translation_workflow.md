@@ -2,6 +2,9 @@
 title = "Creating an AI-Powered Document Translation Workflow"
 description = "Outlining the translation workflow of my app, which crawls web content, translates it and prepares it for consumption through a web-based Markdown Viewer."
 date = "2025-04-19"
+
+[taxonomies]
+tags = ["ai", "translation", "nlp", "python", "docker", "automation"]
 +++
 
 ## Introduction

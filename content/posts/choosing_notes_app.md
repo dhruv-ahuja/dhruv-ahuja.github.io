@@ -2,6 +2,9 @@
 title = "My Quest to Find the Perfect Self-Hosted Notes App"
 description = "My back-and-forth journey to go self-hosted with my notes."
 date = "2025-02-11"
+
+[taxonomies]
+tags = ["self-hosted", "notes", "productivity", "tools", "silverbullet"]
 +++
 
 ## Backstory
