@@ -3,7 +3,6 @@
 :root {
   /* Increase base font size from 13.5px to 15px (more moderate increase) */
   --font-size-base: 15px;
-  --primary-color: #0066cc; /* Define a primary color if not already defined */
 }
 
 /* Increase social icon size from 16px to 18px (more proportional) */
@@ -100,7 +99,7 @@ nav .left-nav .socials .social img {
 
 .card-title a:hover {
   text-decoration: none;
-  color: white;
+  color: var(--hover-color);
   background-color: var(--primary-color);
 }
 
@@ -129,4 +128,20 @@ nav .left-nav .socials .social img {
   width: 100%;
   height: auto;
   display: block;
+}
+
+/* Ensure selection colors work properly */
+::selection {
+  background-color: var(--primary-color);
+  color: var(--hover-color);
+}
+
+pre code::selection {
+  background-color: var(--primary-color);
+  color: var(--hover-color);
+}
+
+code::selection {
+  background-color: var(--primary-color);
+  color: var(--hover-color);
 }

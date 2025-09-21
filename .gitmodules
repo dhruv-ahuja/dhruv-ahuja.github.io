@@ -1,3 +1,9 @@
 [submodule "themes/apollo-custom"]
 	path = themes/apollo-custom
 	url = https://github.com/dhruv-ahuja/apollo-custom.git
+[submodule "themes/ap"]
+	path = themes/ap
+	url = https://github.com/not-matthias/apollo
+[submodule "themes/apollo"]
+	path = themes/apollo
+	url = https://github.com/not-matthias/apollo

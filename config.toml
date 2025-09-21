@@ -7,7 +7,7 @@ compile_sass = true
 minify_html = true
 taxonomies = [{ name = "tags" }]
 
-theme = "apollo-custom"
+theme = "apollo"
 
 [search]
 include_title = true
@@ -48,7 +48,8 @@ socials = [
 ]
 
 stylesheets = [
-    "custom.css"    # at /static/custom.css
+    "custom.css",    # at /static/custom.css
+   "theme-sunset.css",   # Sunset Gradient theme
 ]
 
 [extra.taxonomies]

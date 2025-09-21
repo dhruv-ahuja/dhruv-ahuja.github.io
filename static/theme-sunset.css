@@ -1,0 +1,77 @@
+/* Color Scheme 2: Sunset Gradient (Orange and Pink) */
+
+/* Light mode colors */
+:root.light {
+  --primary-color: #FF8C00;
+  --accent-color: #FF5A8A;
+  --hover-color: #FFFFFF;
+}
+
+/* Dark mode colors */
+:root.dark {
+  --primary-color: #F56B00;
+  --accent-color: #FF2973;
+  --hover-color: #FFFFFF;
+}
+
+/* Default (fallback) colors */
+:root {
+  --primary-color: #F56B00;
+  --accent-color: #FF2973;
+  --hover-color: #FFFFFF;
+}
+
+/* Ensure links use the new primary color */
+.card-title a:hover,
+.project-title a:hover {
+  background-color: var(--primary-color) !important;
+  color: var(--hover-color) !important;
+}
+
+/* Ensure other elements use the new color */
+a:hover {
+  color: var(--primary-color) !important;
+}
+
+/* Border color on hover */
+.card:hover {
+  border-color: var(--primary-color) !important;
+}
+
+/* Selection color for text - ensuring good contrast */
+::selection {
+  background-color: var(--primary-color) !important;
+  color: var(--hover-color) !important;
+}
+
+/* For code highlighting if needed */
+pre code::selection {
+  background-color: var(--primary-color) !important;
+  color: var(--hover-color) !important;
+}
+
+code::selection {
+  background-color: var(--primary-color) !important;
+  color: var(--hover-color) !important;
+}
+
+/* Ensure form elements and other interactive elements use the new colors */
+button:hover,
+input:focus {
+  border-color: var(--primary-color) !important;
+}
+
+/* Fix for link hover readability - use white text on orange background */
+a:hover {
+  background-color: var(--primary-color) !important;
+  color: var(--hover-color) !important;
+}
+
+/* Exception for specific links that shouldn't have background color */
+.meta a:hover,
+.talks-grid a:hover,
+.cards a:hover {
+  background-color: transparent !important;
+  color: var(--primary-color) !important;
+  text-decoration: underline;
+}

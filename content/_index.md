@@ -8,8 +8,6 @@ template = "home.html"
 
 Welcome to my website, my name is Dhruv and I’m a self-taught software engineer mostly interested in backend with a pinch of frontend engineering. I started programming in May of 2021 and started working professionally in July 2022. The first language that I learnt and the one that I work in primarily is Python, though I spent several months just nerding over Rust sometime back, proof of which can found in my blogs and projects. I am also exploring and practicing frontend technologies.
 
-I am currently primarily hacking on [backend_burger](https://github.com/dhruv-ahuja/backend_burger) and learning about scalable backend concepts plus some computer science concepts as well.
-
 I work as a software engineer at [DwellFi](https://dwell.fi), an US-based startup automating venture fund management processes and reducing manual workloads. In my free time, I am also contributing to Pydantic's [Logfire observability platform](https://github.com/pydantic/logfire).
 
 ## Interests
