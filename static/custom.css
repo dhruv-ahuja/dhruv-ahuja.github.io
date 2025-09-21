@@ -21,3 +21,53 @@ nav .left-nav .socials .social img {
 .logo > img {
   height: 28px;
 }
+
+/* Styles for projects list view */
+.projects-list {
+  margin-top: 2rem;
+}
+
+.project-item {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.project-item:last-child {
+  border-bottom: none;
+}
+
+.project-title {
+  margin-bottom: 0.5rem;
+}
+
+.project-title a {
+  text-decoration: none;
+  color: var(--text-0);
+}
+
+.project-title a:hover {
+  text-decoration: underline;
+  color: var(--primary-color);
+}
+
+.project-description {
+  margin-bottom: 0.5rem;
+  color: var(--text-1);
+}
+
+.project-meta {
+  font-size: 0.9em;
+  color: var(--text-2);
+}
+
+/* Card styling improvements */
+.card {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+}
+
+.card-info {
+  flex: 1;
+}
