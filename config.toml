@@ -1,5 +1,5 @@
 base_url = "https://dhruvahuja.me"
-title = "dhruv_ahuja"
+title = "dhruv-ahuja"
 description = "Dhruv Ahuja's Place on the Web"
 build_search_index = true
 generate_feeds = true
@@ -47,7 +47,7 @@ socials = [
 ]
 
 stylesheets = [
-    # "custom.css"    # at /static/custom.css
+    "custom.css"    # at /static/custom.css
 ]
 
 [extra.taxonomies]

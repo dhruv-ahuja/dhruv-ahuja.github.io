@@ -1,0 +1,23 @@
+/* Custom CSS to increase font size and social icon size */
+
+:root {
+  /* Increase base font size from 13.5px to 15px (more moderate increase) */
+  --font-size-base: 15px;
+}
+
+/* Increase social icon size from 16px to 18px (more proportional) */
+nav .left-nav .socials .social img {
+  width: 18px;
+  height: 18px;
+}
+
+/* Increase dark mode toggle icon size */
+#dark-mode-toggle > img {
+  width: 18px;
+  height: 18px;
+}
+
+/* Increase logo size */
+.logo > img {
+  height: 28px;
+}
