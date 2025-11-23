@@ -21,4 +21,4 @@ I currently own an `M1 Macbook Air (16 GB + 256 GB)` that I connect to my Benq 2
 
 ## Contact
 
-You can write to me at [my email](mailto:dhruvahuja2k@gmail.com), connect with me on [LinkedIn](https://www.linkedin.com/in/dhruvahuja2k/) and find my side-activity and projects on [Github](https://github.com/dhruv-ahuja/).
+You can write to me at [my email](mailto:dhruvahuja2k@gmail.com), connect with me on [LinkedIn](https://www.linkedin.com/in/dhruvahuja2k/) and find my side-activity and projects on [GitHub](https://github.com/dhruv-ahuja/).

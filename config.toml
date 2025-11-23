@@ -25,6 +25,9 @@ highlight_themes_css = [
   { theme = "ayu-light", filename = "syntax-theme-light.css" },
 ]
 
+# open external links in new tab
+external_links_target_blank = true
+
 [extra]
 theme = "toggle"              # light, dark, auto, toggle
 toc = true
