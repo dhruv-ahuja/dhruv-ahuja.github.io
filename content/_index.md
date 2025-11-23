@@ -1,14 +1,14 @@
 +++
-title = "About Me"
+title = "This is Dhruv"
 description = "this is the homepage"
 template = "home.html"
 +++
 
 ## About
 
-Welcome to my website, my name is Dhruv and I’m a self-taught software engineer mostly interested in backend with a pinch of frontend engineering. I started programming in May of 2021 and started working professionally in July 2022. I mainly work with Python, and it is the first language that I learnt. I'd also expored Rust quite a bit, creating some projects and writing about my experiments and observations.
+Bienvenidos to my corner of the internet! I'm Dhruv, a self-taught software engineer mostly interested in backend infrastructures and devops. I started programming in May of 2021 and started working professionally in July 2022. I mainly work with Python, and it is the first language that I learnt. I'd also expored Rust quite a bit, creating some projects and writing about my experiments and observations.
 
-I work as a DevRel (content-focus) Engineer at [SigNoz](https://signoz.io/), an OSS, OpenTelemetry-native observability platform. This is a transition from my previous role as a software engineer, and aligns more with passion for writing.
+I work as a DevRel Engineer at [SigNoz](https://signoz.io/), an OSS, OpenTelemetry-native observability platform. This is a transition from my previous role as a software engineer, and aligns more with passion for writing.
 
 ## Interests
 
