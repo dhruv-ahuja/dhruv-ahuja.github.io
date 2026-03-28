@@ -17,6 +17,53 @@ nav .left-nav .socials .social img {
   height: 18px;
 }
 
+/* ── Nav icon buttons (search, RSS, theme toggle) ─────────────────────────
+   A single CSS custom property drives light/dark icon colour.
+   --nav-icon-filter: none  → icons stay dark on light backgrounds
+   --nav-icon-filter: invert(1) → icons flip to white on dark backgrounds  */
+:root, :root.light {
+  --nav-icon-filter: none;
+  --nav-icon-hover: invert(42%) sepia(99%) saturate(700%) hue-rotate(1deg) brightness(98%) contrast(106%);
+}
+
+:root.dark {
+  --nav-icon-filter: invert(1);
+}
+
+/* Shared button reset + layout */
+.nav-icon-btn {
+  background: none;
+  border: none;
+  padding: 2px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 0.5rem;
+  text-decoration: none;
+}
+
+/* Icon state: at rest uses theme filter, hover tints to primary-color */
+.nav-icon-btn > img {
+  width: 18px;
+  height: 18px;
+  display: block;
+  opacity: 0.8;
+  filter: var(--nav-icon-filter);
+  transition: filter 0.2s ease, opacity 0.2s ease;
+}
+
+:root .nav-icon-btn:hover > img {
+  opacity: 1;
+  filter: var(--nav-icon-hover);
+}
+
+/* RSS link: suppress the theme-sunset broad a:hover background */
+.rss-button:hover {
+  background-color: transparent !important;
+  color: inherit !important;
+}
+
 /* Increase logo size */
 .logo > img {
   height: 28px;

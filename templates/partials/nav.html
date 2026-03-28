@@ -24,9 +24,22 @@
             <a href={{ get_url(path=menu.url) }} style="margin-right: 0.5em">{{ menu.name }}</a>
         {% endfor %}
 
+        {% if config.generate_feeds %}
+            <a href="{{ get_url(path='atom.xml', trailing_slash=false) }}"
+               id="rss-button"
+               class="rss-button nav-icon-btn"
+               title="RSS / Atom Feed"
+               target="_blank"
+               rel="noopener">
+                <img src="{{ get_url(path='icons/social/rss.svg') }}"
+                     alt="RSS Feed"
+                     class="rss-icon">
+            </a>
+        {% endif %}
+
         {% if config.build_search_index %}
             <button id="search-button"
-                    class="search-button"
+                    class="search-button nav-icon-btn"
                     title="$SHORTCUT to open search">
                 <img src="{{ get_url(path='icons/search.svg') }}"
                      alt="Search"
@@ -66,15 +79,15 @@
         {% endif %}
 
         {% if config.extra.theme == "toggle" %}
-            <a id="dark-mode-toggle"
-               onclick="toggleTheme(); event.preventDefault();"
-               href="#">
+            <button id="dark-mode-toggle"
+                    class="dark-mode-toggle nav-icon-btn"
+                    onclick="toggleTheme()"
+                    title="Toggle theme">
                 <img src="{{ get_url(path="icons/sun.svg") }}"
                      id="sun-icon"
-                     style="filter: invert(1)"
                      alt="Light" />
                 <img src={{ get_url(path="icons/moon.svg") }} id="moon-icon" alt="Dark" />
-            </a>
+            </button>
 
             <!-- Initialize the theme toggle icons -->
             <script>updateItemToggleTheme()</script>
