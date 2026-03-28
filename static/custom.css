@@ -141,6 +141,30 @@ pre code::selection {
   color: var(--hover-color);
 }
 
+:root.dark .rss-button > img {
+  filter: invert(1);
+}
+
+/* RSS feed button in navbar */
+.rss-button {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 0.5em;
+  opacity: 0.75;
+  transition: opacity 0.2s ease;
+}
+
+.rss-button:hover {
+  opacity: 1;
+  background-color: transparent !important;
+}
+
+.rss-icon {
+  width: 18px;
+  height: 18px;
+  display: block;
+}
+
 code::selection {
   background-color: var(--primary-color);
   color: var(--hover-color);
