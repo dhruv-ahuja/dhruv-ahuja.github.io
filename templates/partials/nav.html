@@ -79,15 +79,15 @@
         {% endif %}
 
         {% if config.extra.theme == "toggle" %}
-            <a id="dark-mode-toggle"
-               onclick="toggleTheme(); event.preventDefault();"
-               href="#">
+            <button id="dark-mode-toggle"
+                    class="dark-mode-toggle"
+                    onclick="toggleTheme()"
+                    title="Toggle theme">
                 <img src="{{ get_url(path="icons/sun.svg") }}"
                      id="sun-icon"
-                     style="filter: invert(1)"
                      alt="Light" />
                 <img src={{ get_url(path="icons/moon.svg") }} id="moon-icon" alt="Dark" />
-            </a>
+            </button>
 
             <!-- Initialize the theme toggle icons -->
             <script>updateItemToggleTheme()</script>
