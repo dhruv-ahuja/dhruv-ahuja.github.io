@@ -27,7 +27,7 @@
         {% if config.generate_feeds %}
             <a href="{{ get_url(path='atom.xml', trailing_slash=false) }}"
                id="rss-button"
-               class="rss-button"
+               class="rss-button nav-icon-btn"
                title="RSS / Atom Feed"
                target="_blank"
                rel="noopener">
@@ -39,7 +39,7 @@
 
         {% if config.build_search_index %}
             <button id="search-button"
-                    class="search-button"
+                    class="search-button nav-icon-btn"
                     title="$SHORTCUT to open search">
                 <img src="{{ get_url(path='icons/search.svg') }}"
                      alt="Search"
@@ -80,7 +80,7 @@
 
         {% if config.extra.theme == "toggle" %}
             <button id="dark-mode-toggle"
-                    class="dark-mode-toggle"
+                    class="dark-mode-toggle nav-icon-btn"
                     onclick="toggleTheme()"
                     title="Toggle theme">
                 <img src="{{ get_url(path="icons/sun.svg") }}"

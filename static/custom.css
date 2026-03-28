@@ -17,8 +17,21 @@ nav .left-nav .socials .social img {
   height: 18px;
 }
 
-/* Button reset for the theme toggle */
-.dark-mode-toggle {
+/* ── Nav icon buttons (search, RSS, theme toggle) ─────────────────────────
+   A single CSS custom property drives light/dark icon colour.
+   --nav-icon-filter: none  → icons stay dark on light backgrounds
+   --nav-icon-filter: invert(1) → icons flip to white on dark backgrounds  */
+:root, :root.light {
+  --nav-icon-filter: none;
+  --nav-icon-hover: invert(42%) sepia(99%) saturate(700%) hue-rotate(1deg) brightness(98%) contrast(106%);
+}
+
+:root.dark {
+  --nav-icon-filter: invert(1);
+}
+
+/* Shared button reset + layout */
+.nav-icon-btn {
   background: none;
   border: none;
   padding: 2px;
@@ -27,6 +40,28 @@ nav .left-nav .socials .social img {
   align-items: center;
   justify-content: center;
   margin-left: 0.5rem;
+  text-decoration: none;
+}
+
+/* Icon state: at rest uses theme filter, hover tints to primary-color */
+.nav-icon-btn > img {
+  width: 18px;
+  height: 18px;
+  display: block;
+  opacity: 0.8;
+  filter: var(--nav-icon-filter);
+  transition: filter 0.2s ease, opacity 0.2s ease;
+}
+
+:root .nav-icon-btn:hover > img {
+  opacity: 1;
+  filter: var(--nav-icon-hover);
+}
+
+/* RSS link: suppress the theme-sunset broad a:hover background */
+.rss-button:hover {
+  background-color: transparent !important;
+  color: inherit !important;
 }
 
 /* Increase logo size */
@@ -151,57 +186,6 @@ nav .left-nav .socials .social img {
 pre code::selection {
   background-color: var(--primary-color);
   color: var(--hover-color);
-}
-
-/* Search, RSS & theme toggle icons: unified filter behaviour */
-/* Light mode: icons are naturally dark; hover tints to primary-color */
-.search-button > img,
-.rss-button > img,
-.dark-mode-toggle > img {
-  transition: filter 0.2s ease, opacity 0.2s ease;
-  opacity: 0.8;
-}
-
-.search-button:hover > img,
-.rss-button:hover > img,
-.dark-mode-toggle:hover > img {
-  opacity: 1;
-  /* Orange tint matching --primary-color: #F56B00 */
-  filter: invert(42%) sepia(99%) saturate(700%) hue-rotate(1deg) brightness(98%) contrast(106%);
-}
-
-/* Dark mode: invert to white first, then tint to primary-color on hover */
-:root.dark .search-button > img,
-:root.dark .rss-button > img,
-:root.dark .dark-mode-toggle > img {
-  filter: invert(1);
-  opacity: 0.8;
-}
-
-:root.dark .search-button:hover > img,
-:root.dark .rss-button:hover > img,
-:root.dark .dark-mode-toggle:hover > img {
-  opacity: 1;
-  /* Invert + orange tint for dark mode */
-  filter: invert(42%) sepia(99%) saturate(700%) hue-rotate(1deg) brightness(98%) contrast(106%);
-}
-
-/* RSS feed button in navbar */
-.rss-button {
-  display: inline-flex;
-  align-items: center;
-  margin-right: 0.5em;
-}
-
-.rss-button:hover {
-  background-color: transparent !important;
-  color: inherit !important;
-}
-
-.rss-icon {
-  width: 18px;
-  height: 18px;
-  display: block;
 }
 
 code::selection {
