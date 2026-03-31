@@ -1,6 +1,6 @@
 +++
 title = "How the (Em)ighty Have Fallen—"
-description = "A journey of the em dash, my obsession with it growing up, my deep appreciation, and the modern constraints upon its usage."
+description = "A journey of the em dash, my obsession with it growing up, and the modern constraints upon its usage."
 date = "2026-03-29"
 
 [taxonomies]

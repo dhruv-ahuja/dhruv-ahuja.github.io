@@ -177,6 +177,15 @@ nav .left-nav .socials .social img {
   display: block;
 }
 
+/* Post description (subtitle) shown under the title on blog post pages */
+.post-description {
+  margin-top: 0.35rem;
+  margin-bottom: 0.75rem;
+  color: var(--text-1);
+  font-size: 0.95em;
+  line-height: 1.5;
+}
+
 /* Ensure selection colors work properly */
 ::selection {
   background-color: var(--primary-color);
