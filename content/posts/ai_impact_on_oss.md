@@ -62,7 +62,7 @@ Similarly, many renowned GitHub repositories have adopted extreme measures to co
 
 [cURL](https://github.com/curl/curl), for one, completely [scrapped its bug bounty program](https://github.com/curl/curl/pull/20312). [Daniel](https://github.com/bagder), cURL’s founder and development lead, published a blog post a few days later explaining why the problem had become untenable.
 
-In the comments on Daniel's post, [Piotr](https://github.com/ppkarwasz) from the Apache Log4j team described an almost identical situation with their own bug bounty program since July 2024 — the same inflection point where AI-assisted workflows began accelerating in earnest. The pattern was the same: a flood of low-quality, AI-generated submissions consuming scarce volunteer time that could have gone toward real issues.
+In the comments, [Piotr](https://github.com/ppkarwasz) from the Apache Log4j team further detailed their own struggles — overseeing an influx of low-effort reports to the Log4j Bug Bounty Program since July 2024. This was the time when engineers truly began harnessing the power of LLMs for speeding up their development workflows.
 
 
 ![Log4j AI Slop Comment](/images/curl_blog_log4j_comment.png)
