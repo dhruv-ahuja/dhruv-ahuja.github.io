@@ -1,13 +1,11 @@
 +++
 title = "I owe my career to open-source communities. I'm not sure newcomers can say the same."
-description = "A journey of the em dash, my obsession with it growing up, and the modern constraints upon its usage."
+description = "Open-source communities shaped my career in ways no tutorial ever could. Now, as AI floods those same spaces with noise, I worry about the people arriving just a few years too late."
 date = "2026-05-15"
 
 [taxonomies]
 tags = ["life", "career"]
 +++
-
----
 
 ## Open-source is cool
 
@@ -23,14 +21,18 @@ In 2021, I’d chosen Python over Javascript as the language to learn, build som
 
 I picked up FastAPI instead of Django, because I saw [this talk](https://youtu.be/37CcB2GBdlY) by FastAPI founder [tiangolo](https://github.com/tiangolo), and thought that async-first and type safety in web apps sounded great and was the future, even though I barely knew what Python types were at the time.
 
+### Finding my people
+
 Similarly, I also loved reading opinion pieces, GitHub issues on software development, and tech discussions on Reddit and Discord. Over time, I began participating in these discussions as an enthusiastic beginner. Slowly, I made friends, found mentors and learnt things I absolutely wouldn’t have learnt otherwise.
 I also discovered a mantra, that has helped me with my career thus far—my recent transition to a content-focused DevRel role—is that you might not be the best, but by being passionate, curious, and proactive, you can make friends and be remarkable.
 
-I wanted to make a mark online, and besides coding, that meant being active in these communities, learning how they thought about things, being genuine, open to feedback on my code, and being somewhat opinionated.
-I can’t be the best dev out there, but maybe I can showcase my first serious project, a CLI-based song downloader, on Reddit, get genuine feedback from better programmers, and get some GitHub stars in the process.
-I landed my first job in July 2022, after about one year of learning programming, as a web developer for a small startup using FastAPI on the backend. The CEO there was impressed by my GitHub project, and the documentation and discussions around it. And so, the stars aligned and I broke into tech in July 2022, just before the tech winter arrived—I’d been warned by a friend who had heard the murmurs from his friends in big tech<@dhruv, check if this oughta be included!!>.
+### Landing that first role
 
-<-- @dhruv, reduce the philosophy here, we need to be humbler and a little more terse; for HN we want to focus on the community and how it shaped us, now what our intent was per-se...
+I wanted to make a mark online, and besides coding, that meant being active in these communities, learning how they thought about things, being genuine, open to feedback on my code, and being somewhat opinionated.
+I can’t be the best developer out there, but maybe I can showcase my first serious project, a CLI-based song downloader, on Reddit and get genuine feedback from better programmers. This showcase would also help market my application and gain some GitHub stars in the process.
+I landed my first job in July 2022, after about one year of learning programming, as a web developer for a small startup using FastAPI on the backend. The CEO there was impressed by my GitHub project, and the documentation and discussions around it. And so, the stars aligned and I broke into tech in July 2022.
+
+### Delving deeper
 
 In late 2023, I was obsessed with Rust, and found similar support in the r/rust subreddit and the official Discord server. This was some of the most enjoyable time I had programming: being blown away by Clippy’s helpful error diagnostics, admitting to a couple Rustacean friends about how I broke down in tears dealing with Tokio’s lifetime requirements, when I was [rewriting my CLI song downloader](https://dhruvahuja.me/posts/writing-rust-bindings/) in async Rust, and the joy I felt seeing my blogs being accepted for the [This Week in Rust newsletter](https://this-week-in-rust.org).
 
@@ -45,12 +47,16 @@ While producing output has never been easier, it has made it incredibly difficul
 This has led to online communities and platforms being bombarded by a barrage of low-effort content. Often, the users posting these projects have little idea about the internals, and even resort to using AI for responding to comments on their posts.
 For users looking to participate in genuine discussions or understand the intent and implementation details, such posts are a waste of time and effort.
 
+### Communities push back
+
 To combat this flood of low-effort content, moderators of most communities have begun tightening the rules. For example, many large subreddits now outright flag posts that have a GitHub link, or are perceived as “AI slop”—the term given to this sort of AI-generated content.
 The first rule in the r/python subreddit, titled `No showcase posts`, explicitly states:
 ```md
 Due to an increase of showcases featuring AI content such as working with multiple AI models or wrappers around APIs, this is no longer allowed. Please post your showcases in the appropriate monthly showcase post or a daily thread instead.
 ```
 The r/programming subreddit, which has ~290K weekly visitors, [banned all AI-related content](https://www.reddit.com/r/programming/comments/1s9jkzi/announcement_temporary_llm_content_ban/) for the month of April, with the community responding to the change positively in a [follow-up thread](https://www.reddit.com/r/programming/comments/1t4odyl/looking_for_feedback_on_ai_content_in/) started by the moderators to gather the community’s feedback.
+
+### Open-source repositories under siege
 
 Similarly, many renowned GitHub repositories have adopted extreme measures to counter this problem.
 
