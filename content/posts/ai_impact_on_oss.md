@@ -60,9 +60,9 @@ The r/programming subreddit, which has ~290K weekly visitors, [banned all AI-rel
 
 Similarly, many renowned GitHub repositories have adopted extreme measures to counter this problem.
 
-[cURL](https://github.com/curl/curl), for one, completely [scrapped its bug bounty program](https://github.com/curl/curl/pull/20312). [Daniel](https://github.com/bagder), cURL’s founder and development lead, published a blog post a few days later explaining why the problem had become untenable.
+[cURL](https://github.com/curl/curl), for one, completely [scrapped its bug bounty program](https://github.com/curl/curl/pull/20312). [Daniel](https://github.com/bagder), cURL’s founder and development lead, published a blog post a few days later explaining why the problem had become unmanageable.
 
-In the comments, [Piotr](https://github.com/ppkarwasz) from the Apache Log4j team further detailed their own struggles — overseeing an influx of low-effort reports to the Log4j Bug Bounty Program since July 2024. This was the time when engineers truly began harnessing the power of LLMs for speeding up their development workflows.
+In the comments, [Piotr](https://github.com/ppkarwasz) from the Apache Log4j team further detailed their own struggles — overseeing an influx of low-effort reports to the Log4j Bug Bounty Program since July 2024. This lines up with the time when engineers truly began harnessing the power of LLMs for speeding up their development workflows.
 
 
 ![Log4j AI Slop Comment](/images/curl_blog_log4j_comment.png)
