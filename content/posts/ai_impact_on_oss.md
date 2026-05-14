@@ -1,10 +1,11 @@
-**As AI Takes Over, When Does Taste Go?**
-OR
-**How AI has raised the barrier to entry into open-source**
-OR
-**AI has hurt the open-source community, and newcomers are worse off for it**
++++
+title = "I owe my career to open-source communities. I'm not sure newcomers can say the same."
+description = "A journey of the em dash, my obsession with it growing up, and the modern constraints upon its usage."
+date = "2026-05-15"
 
-<-- @dhruv, spend time thinking on an apt title that best encapsulates our intent, and aligns with HN thought process
+[taxonomies]
+tags = ["life", "career"]
++++
 
 ---
 
