@@ -73,8 +73,8 @@ In the comments, [Piotr](https://github.com/ppkarwasz) from the Apache Log4j tea
 <div style="text-align: center;"><em>Credit: <a href="https://daniel.haxx.se/blog/2026/01/26/the-end-of-the-curl-bug-bounty/#comments">Daniel's Blog</a></em></div>
 
 Although I have cherry-picked a few well-known examples here, I am certain these changes are not limited to larger communities or programming codebases. Communities of all shapes and sizes, including individuals, have been struggling under the weight of AI-driven activities.
-By this point, almost all of us have run into a wall of overly-verbose Markdown documents, complete with elaborate Mermaid diagrams and references to dozens of sources for further reading, at work or elsewhere.
 
+By this point, almost all of us have run into a wall of overly-verbose Markdown documents, complete with elaborate Mermaid diagrams and references to dozens of sources for further reading, at work or elsewhere.  
 Ironically, in my experience the Mermaid diagrams often do more to explain the concept than the pages of generated text.
 
 ## An uphill battle for newcomers
