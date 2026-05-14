@@ -186,6 +186,12 @@ nav .left-nav .socials .social img {
   line-height: 1.5;
 }
 
+/* Wrap long lines in code blocks instead of horizontal scrolling */
+pre {
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
 /* Ensure selection colors work properly */
 ::selection {
   background-color: var(--primary-color);

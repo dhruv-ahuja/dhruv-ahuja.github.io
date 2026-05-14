@@ -23,13 +23,15 @@ I picked up FastAPI instead of Django, because I saw [this talk](https://youtu.b
 
 ### Finding my people
 
-Alongside the coding, I loved reading opinion pieces, GitHub issues, and tech discussions on Reddit and Discord. Over time, I began participating as an enthusiastic beginner — slowly making friends, finding mentors, and learning things I absolutely wouldn't have learnt otherwise.
+Alongside the coding, I loved reading opinion pieces, GitHub issues, and tech discussions on Reddit and Discord. Over time, I began participating as an enthusiastic beginner — slowly making friends, finding mentors, and learning things I absolutely wouldn't have learnt otherwise.  
 A mantra I've carried through every role since, including my recent transition to DevRel, is that you don't have to be the best: by being passionate, curious, and proactive, you can make friends and be remarkable.
 
 ### Landing that first role
 
-I wanted to make a mark online, and besides coding, that meant being active in these communities, learning how they thought about things, being genuine, open to feedback on my code, and being somewhat opinionated.
-I couldn't be the best developer out there, but I could put my first real project, a CLI-based song downloader, out on Reddit, get genuine feedback from better programmers, and build some credibility in the process.
+I wanted to make a mark online, and besides coding, that meant being active in these communities, learning how they thought about things, being genuine, open to feedback on my code, and being somewhat opinionated.  
+
+I couldn't be the best developer out there, but I could put my first real project, a CLI-based song downloader, out on Reddit, get genuine feedback from better programmers, and build some credibility in the process.  
+
 I landed my first job in July 2022, after about one year of learning programming, as a web developer for a small startup using FastAPI on the backend. Their CEO was impressed by my GitHub project, and the documentation and discussions around it. And so, the stars aligned, and I broke into tech.
 
 ### Delving deeper
@@ -37,21 +39,23 @@ I landed my first job in July 2022, after about one year of learning programming
 In late 2023, I was obsessed with Rust, and found similar support in the r/rust subreddit and the official Discord server. This was some of the most enjoyable time I had programming: being blown away by Clippy's helpful error diagnostics, admitting to a couple Rustacean friends about how I broke down in tears dealing with Tokio's lifetime requirements, when I was [rewriting my CLI song downloader](https://dhruvahuja.me/posts/writing-rust-bindings/) in async Rust, and the joy I felt seeing my blogs being accepted for the [This Week in Rust newsletter](https://this-week-in-rust.org).
 
 These small wins meant the world to me. They assured me that I'd "made it", that I'm a part of these communities I have admired since the beginning, as at least a little more than an enthusiastic novice.
-In fact, I owe my career to these communities, all the internet strangers who answered my silly questions (most infamously, "how many endpoints should a typical web API have?", for which I received scathing critique), helped break down design patterns, and plan out my career. Many of these strangers have gone on to become people I deeply respect and look up to, and a few have even become lifelong friends.
+In fact, I owe my career to these communities, all the internet strangers who answered my silly questions (most infamously, "how many endpoints should a typical web API have?", for which I received scathing critique), helped break down design patterns, and plan out my career.
+
+Many of these strangers have gone on to become people I deeply respect and look up to, and a few have even become lifelong friends.
 
 ## When the floodgates opened
 
-Fast forwarding to 2026, and things have changed significantly. LLMs have reduced the barrier to entry for *generating* code, memos, and documentation of all kinds. You could ask Claude to generate a 10-page manifesto for your startup idea and it will gleefully do that.
+Fast forwarding to 2026, and things have changed significantly. LLMs have reduced the barrier to entry for *generating* code, memos, and documentation of all kinds. You could ask Claude to generate a 10-page manifesto for your startup idea and it will gleefully do that.  
 While producing output has never been easier, it has made it incredibly difficult to be taken seriously. 
 
-This has led to online communities and platforms being bombarded with low-effort content. Often, the users posting these projects have little idea about the internals, and even resort to using AI for responding to comments on their posts.
+This has led to online communities and platforms being bombarded with low-effort content. Often, the users posting these projects have little idea about the internals, and even resort to using AI for responding to comments on their posts.  
 For users looking to participate in genuine discussions or understand the intent and implementation details, such posts are a waste of time and effort.
 
 ### Communities push back
 
 To combat this flood of low-effort content, moderators of most communities have begun tightening the rules. For example, many large subreddits now outright flag posts that have a GitHub link, or are perceived as "AI slop" — the term given to this sort of AI-generated content.
 The first rule in the r/python subreddit, titled `No showcase posts`, explicitly states:
-```md
+```
 Due to an increase of showcases featuring AI content such as working with multiple AI models or wrappers around APIs, this is no longer allowed. Please post your showcases in the appropriate monthly showcase post or a daily thread instead.
 ```
 The r/programming subreddit, which has ~290K weekly visitors, [banned all AI-related content](https://www.reddit.com/r/programming/comments/1s9jkzi/announcement_temporary_llm_content_ban/) for the month of April, with the community responding to the change positively in a [follow-up thread](https://www.reddit.com/r/programming/comments/1t4odyl/looking_for_feedback_on_ai_content_in/) started by the moderators to gather the community's feedback.
@@ -65,8 +69,8 @@ Similarly, many renowned GitHub repositories have adopted extreme measures to co
 In the comments, [Piotr](https://github.com/ppkarwasz) from the Apache Log4j team further detailed their own struggles — overseeing an influx of low-effort reports to the Log4j Bug Bounty Program since July 2024. This lines up with the time when engineers truly began harnessing the power of LLMs for speeding up their development workflows.
 
 
-![Log4j AI Slop Comment](/images/curl_blog_log4j_comment.png)
-_Credit: [Daniel's Blog](https://daniel.haxx.se/blog/2026/01/26/the-end-of-the-curl-bug-bounty/#comments)_
+<img src="/images/curl_blog_log4j_comment.png" alt="Log4j AI Slop Comment" style="max-width: 65%; display: block; margin: 1rem auto;" />
+<div style="text-align: center;"><em>Credit: <a href="https://daniel.haxx.se/blog/2026/01/26/the-end-of-the-curl-bug-bounty/#comments">Daniel's Blog</a></em></div>
 
 Although I have cherry-picked a few well-known examples here, I am certain these changes are not limited to larger communities or programming codebases. Communities of all shapes and sizes, including individuals, have been struggling under the weight of AI-driven activities.
 By this point, almost all of us have run into a wall of overly-verbose Markdown documents, complete with elaborate Mermaid diagrams and references to dozens of sources for further reading, at work or elsewhere.
