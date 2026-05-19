@@ -4,7 +4,7 @@ description = "Open-source communities shaped my career in ways no tutorial ever
 date = "2026-05-15"
 
 [taxonomies]
-tags = ["life", "career"]
+tags = ["life", "ai"]
 +++
 
 ## Open-source is cool
