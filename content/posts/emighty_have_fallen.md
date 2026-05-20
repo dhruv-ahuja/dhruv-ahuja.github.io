@@ -30,10 +30,13 @@ I learnt the craft of writing primarily by reading voraciously, attempting to me
 This practice yielded some recognition and helped me win a few writing competitions in school—most notably a rank of around 1150 in an International English Olympiad when I was 15.
 
 All I did then—and what I still attempt to do in my day job today—is emulate the authors I admire. Nowadays, my reading material largely consists of technical blogs or documentation material.<br />
-The practice of absorbing and replicating the rhythm of good technical writing is serving me well. I certainly cannot replicate James Clavell's rich, detailed prose that flows effortlessly across entire chapters, making you want to be a part of the world he cast so vividly. I have reread the ending of [Shogun](https://www.goodreads.com/book/show/52382796-sh-gun) twice within a year of finishing the novel, and what I wouldn't give to forget the narrative to be able to go and experience it afresh.<br />
+The practice of absorbing and replicating the rhythm of good technical writing is serving me well. I certainly cannot replicate James Clavell's rich, detailed prose that flows effortlessly across entire chapters, making you want to be a part of the world he cast so vividly.
+
+I have reread the ending of [Shogun](https://www.goodreads.com/book/show/52382796-sh-gun) twice within a year of finishing the novel, and what I wouldn't give to forget the narrative to be able to go and experience it afresh.<br />
 However, as a saving grace, I can at least imitate that sublime language for my internal monologues.
 
-Yet, this very essay is an anomaly. I have not undertaken a written, reflective commentary like this in ages. The last time I wrote something along these lines—rather than merely thinking it—was two or three years ago in a briefly maintained personal diary. Here, I am not trying to optimize for readability scores or technical precision.<br />
+Yet, this very essay is an anomaly. I have not undertaken a written, reflective commentary like this in ages. The last time I wrote something along these lines—rather than merely thinking it—was two or three years ago in a briefly maintained personal diary. Here, I am not trying to optimize for readability scores or technical precision.
+
 I am mostly trying to let the words—and as is apparent, the em dashes—flow exactly as they come (with intense revising, of course; I am not fooling anyone).
 
 ## C for comma, and compromise
