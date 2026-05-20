@@ -25,22 +25,24 @@ As I continued to dabble in new niches, I stumbled upon the `—` character. Thi
 
 And so, this elder cousin to the hyphen—whose name I would not learn for years to come—became an obsession.
 
-## Digression: the imitation game
+## The imitation game
 
-I learnt the craft of writing primarily by reading voraciously, attempting to mentally capture a _frame of reference_ for the passages I found elegant, and then to recreate that feel in the writing I did for my homework, assignments, and the occasional short story or diary entry.<br />
+I learnt the craft of writing primarily by reading voraciously, attempting to mentally capture a _frame of reference_ for the passages I found elegant, and then recreating that feel in my homework, assignments, and the occasional short story or diary entry.<br />
 This practice yielded some recognition and helped me win a few writing competitions in school—most notably a rank of around 1150 in an International English Olympiad when I was 15.
 
-All I did then, and what I still attempt to do in my day job, is to emulate the authors of the bodies of work that I admire. Nowadays, that reading material is largely made up of complex technical blogs.
-The practice of absorbing and replicating the rhythm of good technical writing is serving me well. At least, that’s what I like to think.<br />
-I certainly cannot replicate James Clavell’s rich, detailed prose that floats across entire chapters. As a saving grace, I am able to imitate that alabaster-esque language for my internal monologue.
+All I did then—and what I still attempt to do in my day job today—is emulate the authors I admire. Nowadays, my reading material largely consists of technical blogs or documentation material.<br />
+The practice of absorbing and replicating the rhythm of good technical writing is serving me well. I certainly cannot replicate James Clavell's rich, detailed prose that flows effortlessly across entire chapters, making you want to be a part of the world he cast so vividly. I have reread the ending of [Shogun](https://www.goodreads.com/book/show/52382796-sh-gun) twice within a year of finishing the novel, and what I wouldn't give to forget the narrative to be able to go and experience it afresh.<br />
+However, as a saving grace, I can at least imitate that sublime language for my internal monologues.
 
-Yet, this very essay is an anomaly. Despite this section—for the most part—encapsulating my self-congratulatory nostalgia, I have not undertaken a written, reflective commentary like this in ages. The last time I wrote something along these lines—and not stopped at merely thinking of things—would have been at least two or three years ago, added to the pages of a personal diary I maintained briefly.<br />
-Here, I am not trying to optimize for readability scores or technical precision; I am mostly trying to let the words—and as is apparent, the em dashes—flow as they come (with intense revising, of course; I am not fooling anyone).<br />
-In fact, I had this title for this blog in mind for weeks now, before finally committing to writing it out.
+Yet, this very essay is an anomaly. I have not undertaken a written, reflective commentary like this in ages. The last time I wrote something along these lines—rather than merely thinking it—was two or three years ago in a briefly maintained personal diary. Here, I am not trying to optimize for readability scores or technical precision.<br />
+I am mostly trying to let the words—and as is apparent, the em dashes—flow exactly as they come (with intense revising, of course; I am not fooling anyone).
 
 ## C for comma, and compromise
-To clarify, I have been purposefully liberal with my usage of the em dash in this piece—where else would I use it with carefree abandon if not here? I primarily use the em dash to “expand” a topic, injecting additional context into the current _narrative thread_.
 
-In most instances now, for my technical blogs, I sprinkle it in once or twice at the maximum. It typically appears in the second half, by which point the reader is (hopefully) invested enough, and cognizant of the fact that the content is not AI-generated. I do, however, use AI for content review and validating logical correctness.
+To clarify, I have been purposefully liberal with my usage of the em dash in this piece—where else would I use it with carefree abandon if not here? I primarily use it to “expand” a topic, injecting sudden, additional context into the current _narrative thread_.
 
-And so, for me now—a professional who must write, articulate, and attempt to perform in the public sphere while representing my organization in a clear, unambiguous voice—**the (em)ighty have fallen**. The landscape of writing has shifted, the algorithms have claimed my favourite punctuation mark, and there is little I can do about it.
+But for my technical blogs today, I have to be cautious in how I use it. I flatten my sentences, relying on the unassuming comma to do the heavy lifting. I typically begin sprinkling em dashes throughout my text only after the initial few paragraphs, by which point the reader is (hopefully) invested enough, and fully convinced that a human actually wrote the piece, and not a bot.
+
+To be clear, this isn't a rejection of the technology itself. I actively rely on AI for content review, validating logical correctness, and automating scoped changes to content that I am taking stewardship of. Not doing so would mean losing out on a tool that is exceedingly beneficial when engaged with productively.
+
+And so, for me now—as someone whose primary goal is to share knowledge clearly and build trust without distraction—**the (em)ighty have fallen**. The landscape of writing has shifted, the algorithms have claimed my favourite punctuation mark, and there is little I can do about it.
