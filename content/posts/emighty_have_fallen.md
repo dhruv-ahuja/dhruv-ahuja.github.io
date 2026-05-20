@@ -1,6 +1,6 @@
 +++
 title = "How the (Em)ighty Have Fallen—"
-description = "A journey of the em dash, my obsession with it growing up, and the modern constraints upon its usage."
+description = "Why I have to scrub my favorite punctuation mark to prove I'm human"
 date = "2026-03-29"
 
 [taxonomies]
@@ -9,12 +9,12 @@ tags = ["life", "ai"]
 
 ## Machine maketh the em
 
-The em dash—now heavily stigmatized as a hallmark of, and made infamous by, Large Language Models (LLMs) like ChatGPT—might have risen to public attention in the past few years. It is not, however, a recent invention—tracing its roots back to the printing press of the 15th century.
+The em dash—heavily stigmatized as a hallmark of LLMs like ChatGPT—has suddenly become the most heavily scrutinized punctuation mark on the internet. It is not, however, a recent invention, tracing its roots back to the printing press of the 15th century.
 
-The em dash was born out of necessity as the written word proliferated with the advent of the revolutionary printing press and became accessible to the common public, replacing the books and manuscripts that had previously required painstaking human effort to replicate and maintain.<br />
-Printers needed a way to visually signify a sudden break in thought, a dialogue shift, or an interruption that a comma simply could not bear.
+As the printing press made the written word accessible to the masses, replacing painstakingly hand-copied manuscripts, a new visual syntax was required.  
+Printers needed a way to visually signify a sudden break in thought, a dialogue shift, or an interruption that a comma simply could not bear. The em dash was born out of pure mechanical necessity.
 
-How ironic is it, then, that the punctuation mark which originated with the first era of literary automation now sees a decline in its authentic usage during the latest automated revolution brought about by LLMs.
+There is bitter irony here. The punctuation mark born during the first era of literary automation is now being killed by the latest one. Today, the widespread usage of LLMs forces me to systematically erase it from my own drafts just to avoid the dreaded label of "AI slop"—a label that would immediately render the actual content of my writing meaningless.
 
 ## Formative suspensions
 Growing up, I was immersed in a vast variety of books. I still remember coming home in the first grade when my dad presented me with my first-ever encyclopaedia, brought back from a business trip. By the fourth grade, my taste expanded from encyclopaedias into the realm of fiction—Hardy Boys and Nancy Drew, to name a few prominent examples.
