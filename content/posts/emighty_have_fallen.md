@@ -14,8 +14,7 @@ The em dash—heavily stigmatized as a hallmark of LLMs like ChatGPT—has sudde
 As the printing press made the written word accessible to the masses, replacing painstakingly hand-copied manuscripts, a new visual syntax was required.  
 Printers needed a way to visually signify a sudden break in thought, a dialogue shift, or an interruption that a comma simply could not bear. The em dash was born out of pure mechanical necessity.
 
-There is bitter irony here. The punctuation mark born during the first era of literary automation is now being killed by the latest one. Today, the widespread usage of LLMs forces me to systematically erase it from my own drafts just to avoid the dreaded label of "AI slop"—a label that would immediately render the actual content of my writing meaningless.<br />
-After working for six or so months as a content writer now, I know I must avoid the em dash for the first few paragraphs, first building the narrative based on my unique experience with whatever tool or technology I'm writing about. This helps me be confident that the reader realizes that there's a human on the other end, and not a bot.
+There is bitter irony here. The punctuation mark born during the first era of literary automation is now being killed by the latest one. Today, the widespread usage of LLMs forces me to systematically erase it from my own drafts just to avoid the dreaded label of "AI slop"—a label that would immediately render the actual content of my writing meaningless.
 
 ## Formative suspensions
 
