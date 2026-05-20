@@ -1,6 +1,6 @@
 +++
 title = "How the (Em)ighty Have Fallen—"
-description = "Why I have to scrub my favorite punctuation mark to prove I'm human"
+description = "My obsession with the em dash, and how I'm using it in my writing in the LLM-era."
 date = "2026-03-29"
 
 [taxonomies]
