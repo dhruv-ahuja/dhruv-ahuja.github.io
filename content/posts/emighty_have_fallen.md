@@ -14,15 +14,19 @@ The em dash—heavily stigmatized as a hallmark of LLMs like ChatGPT—has sudde
 As the printing press made the written word accessible to the masses, replacing painstakingly hand-copied manuscripts, a new visual syntax was required.  
 Printers needed a way to visually signify a sudden break in thought, a dialogue shift, or an interruption that a comma simply could not bear. The em dash was born out of pure mechanical necessity.
 
-There is bitter irony here. The punctuation mark born during the first era of literary automation is now being killed by the latest one. Today, the widespread usage of LLMs forces me to systematically erase it from my own drafts just to avoid the dreaded label of "AI slop"—a label that would immediately render the actual content of my writing meaningless.
+There is bitter irony here. The punctuation mark born during the first era of literary automation is now being killed by the latest one. Today, the widespread usage of LLMs forces me to systematically erase it from my own drafts just to avoid the dreaded label of "AI slop"—a label that would immediately render the actual content of my writing meaningless.<br />
+After working for six or so months as a content writer now, I know I must avoid the em dash for the first few paragraphs, first building the narrative based on my unique experience with whatever tool or technology I'm writing about. This helps me be confident that the reader realizes that there's a human on the other end, and not a bot.
 
 ## Formative suspensions
-Growing up, I was immersed in a vast variety of books. I still remember coming home in the first grade when my dad presented me with my first-ever encyclopaedia, brought back from a business trip. By the fourth grade, my taste expanded from encyclopaedias into the realm of fiction—Hardy Boys and Nancy Drew, to name a few prominent examples.
 
-As I grew up, I started reading more challenging works, and thus stumbled upon the `—` character. This, to me, was a fascinating language mechanic, seldom seen but utilized in a multitude of ways, and seemingly, always elegant in its usage.<br />
-And so, the elder cousin to the hyphen—whose name I would not learn for years to come—became an obsession. And although the semicolon struck me as no less elegant a language mechanic, it did not have as strong an impression on my younger self.
+Growing up, I was a voracious reader. I still remember coming home in the first grade one day to find that my dad had brought me back a massive encyclopedia from one of his business trips. By the fourth or the fifth grade, my taste had expanded from facts covered in encyclopedias and into the mysteries of Hardy Boys and Nancy Drew.
+
+As I continued to dabble in new niches, I stumbled upon the `—` character. This, to me, was a fascinating language mechanic, not often seen but always elegant—and flexible—in its usage. "How fascinating", I remember thinking, once I started to take notice of it.
+
+And so, this elder cousin to the hyphen—whose name I would not learn for years to come—became an obsession.
 
 ## Digression: the imitation game
+
 I learnt the craft of writing primarily by reading voraciously, attempting to mentally capture a _frame of reference_ for the passages I found elegant, and then to recreate that feel in the writing I did for my homework, assignments, and the occasional short story or diary entry.<br />
 This practice yielded some recognition and helped me win a few writing competitions in school—most notably a rank of around 1150 in an International English Olympiad when I was 15.
 
