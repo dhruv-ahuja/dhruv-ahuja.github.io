@@ -207,3 +207,42 @@ code::selection {
   background-color: var(--primary-color);
   color: var(--hover-color);
 }
+
+/* ── Featured work callout ──────────────────────────────────────────────── */
+.featured-callout {
+  border-left: 3px solid var(--primary-color);
+  padding: 1.25rem 1.5rem;
+  margin: 1.5rem 0;
+  border-radius: 0 6px 6px 0;
+  background: var(--bg-1, rgba(128, 128, 128, 0.06));
+  transition: border-color 0.2s ease;
+}
+
+.featured-callout:hover {
+  border-left-color: var(--accent-color);
+}
+
+.featured-callout p {
+  margin-bottom: 0.75rem;
+}
+
+.featured-callout p:last-child {
+  margin-bottom: 0;
+}
+
+/* Screenshot / hero image inside the callout */
+.featured-image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 1.25rem auto;
+  border-radius: 6px;
+  border: 1px solid var(--border-color, rgba(128, 128, 128, 0.2));
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.featured-image:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.14);
+  transform: translateY(-2px);
+}
