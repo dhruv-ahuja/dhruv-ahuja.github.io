@@ -1,0 +1,75 @@
+/* Teal accent palette */
+:root.light {
+  --primary-color: #28766e;
+  --accent-color: #66a99f;
+  --hover-color: #ffffff;
+}
+
+:root.dark {
+  --primary-color: #5dd1bd;
+  --accent-color: #94eadc;
+  --hover-color: #09201c;
+  --nav-icon-hover: invert(70%) sepia(28%) saturate(650%) hue-rotate(119deg) brightness(94%) contrast(90%);
+}
+
+:root {
+  --primary-color: #28766e;
+  --accent-color: #66a99f;
+  --hover-color: #ffffff;
+}
+
+/* Ensure links use the new primary color */
+.card-title a:hover,
+.project-title a:hover {
+  background-color: var(--primary-color) !important;
+  color: var(--hover-color) !important;
+}
+
+/* Ensure other elements use the new color */
+a:hover {
+  color: var(--primary-color) !important;
+}
+
+/* Border color on hover */
+.card:hover {
+  border-color: var(--primary-color) !important;
+}
+
+/* Selection color for text - ensuring good contrast */
+::selection {
+  background-color: var(--primary-color) !important;
+  color: var(--hover-color) !important;
+}
+
+/* For code highlighting if needed */
+pre code::selection {
+  background-color: var(--primary-color) !important;
+  color: var(--hover-color) !important;
+}
+
+code::selection {
+  background-color: var(--primary-color) !important;
+  color: var(--hover-color) !important;
+}
+
+/* Ensure form elements and other interactive elements use the new colors */
+button:hover,
+input:focus {
+  border-color: var(--primary-color) !important;
+}
+
+/* Fix for link hover readability - use white text on orange background */
+a:hover {
+  background-color: var(--primary-color) !important;
+  color: var(--hover-color) !important;
+}
+
+/* Exception for specific links that shouldn't have background color */
+.meta a:hover,
+.talks-grid a:hover,
+.featured-callout a:hover,
+.cards a:not(.card-title a):hover {
+  background-color: transparent !important;
+  color: var(--primary-color) !important;
+  text-decoration: underline;
+}

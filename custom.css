@@ -1,0 +1,699 @@
+/* Custom CSS to increase font size and social icon size */
+
+:root {
+  /* Increase base font size from 13.5px to 15px (more moderate increase) */
+  --font-size-base: 15px;
+}
+
+/* Increase social icon size from 16px to 18px (more proportional) */
+nav .left-nav .socials .social img {
+  width: 18px;
+  height: 18px;
+}
+
+/* Increase dark mode toggle icon size */
+#dark-mode-toggle > img {
+  width: 18px;
+  height: 18px;
+}
+
+/* ── Nav icon buttons (search, RSS, theme toggle) ─────────────────────────
+   A single CSS custom property drives light/dark icon colour.
+   --nav-icon-filter: none  → icons stay dark on light backgrounds
+   --nav-icon-filter: invert(1) → icons flip to white on dark backgrounds  */
+:root, :root.light {
+  --nav-icon-filter: none;
+  --nav-icon-hover: invert(40%) sepia(18%) saturate(900%) hue-rotate(100deg) brightness(88%) contrast(89%);
+}
+
+:root.dark {
+  --nav-icon-filter: invert(1);
+}
+
+/* Shared button reset + layout */
+.nav-icon-btn {
+  background: none;
+  border: none;
+  padding: 2px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 0.5rem;
+  text-decoration: none;
+}
+
+/* Icon state: at rest uses theme filter, hover tints to primary-color */
+.nav-icon-btn > img {
+  width: 18px;
+  height: 18px;
+  display: block;
+  opacity: 0.8;
+  filter: var(--nav-icon-filter);
+  transition: filter 0.2s ease, opacity 0.2s ease;
+}
+
+:root .nav-icon-btn:hover > img {
+  opacity: 1;
+  filter: var(--nav-icon-hover);
+}
+
+/* Icon controls should tint their images without receiving a text-link block. */
+.rss-button:hover,
+.nav-icon-btn:hover {
+  background-color: transparent !important;
+  color: inherit !important;
+}
+
+/* Increase logo size */
+.logo > img {
+  height: 28px;
+}
+
+/* Styles for projects list view */
+.projects-list {
+  margin-top: 2rem;
+}
+
+.project-item {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.project-item:last-child {
+  border-bottom: none;
+}
+
+.project-title {
+  margin-bottom: 0.5rem;
+}
+
+.project-title a {
+  text-decoration: none;
+  color: var(--text-0);
+}
+
+.project-title a:hover {
+  text-decoration: underline;
+  color: var(--primary-color);
+}
+
+.project-description {
+  margin-bottom: 0.5rem;
+  color: var(--text-1);
+}
+
+.project-meta {
+  font-size: 0.9em;
+  color: var(--text-2);
+}
+
+/* Card styling improvements */
+.card {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  border-color: var(--primary-color);
+}
+
+.card-info {
+  flex: 1;
+  padding: 1.5rem;
+}
+
+.card-title {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.card-title a {
+  text-decoration: none;
+  color: var(--text-0);
+  background-color: transparent;
+  padding: 2px 4px;
+  border-radius: 2px;
+  transition: all 0.2s ease;
+}
+
+.card-title a:hover {
+  text-decoration: none;
+  color: var(--hover-color);
+  background-color: var(--primary-color);
+}
+
+.card-description {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.card-media {
+  max-height: 200px;
+  overflow: hidden;
+}
+
+.card-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .card-image {
+  transform: scale(1.05);
+}
+
+.card-video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Post description (subtitle) shown under the title on blog post pages */
+.post-description {
+  margin-top: 0.35rem;
+  margin-bottom: 0.75rem;
+  color: var(--text-1);
+  font-size: 0.95em;
+  line-height: 1.5;
+}
+
+/* Wrap long lines in code blocks instead of horizontal scrolling */
+pre {
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* Ensure selection colors work properly */
+::selection {
+  background-color: var(--primary-color);
+  color: var(--hover-color);
+}
+
+pre code::selection {
+  background-color: var(--primary-color);
+  color: var(--hover-color);
+}
+
+code::selection {
+  background-color: var(--primary-color);
+  color: var(--hover-color);
+}
+
+/* ── Featured work callout ──────────────────────────────────────────────── */
+.featured-callout {
+  border-left: 3px solid var(--primary-color);
+  padding: 1.25rem 1.5rem;
+  margin: 1.5rem 0;
+  border-radius: 0 6px 6px 0;
+  background: var(--bg-1, rgba(128, 128, 128, 0.06));
+  transition: border-color 0.2s ease;
+}
+
+.featured-callout:hover {
+  border-left-color: var(--accent-color);
+}
+
+.featured-callout p {
+  margin-bottom: 0.75rem;
+}
+
+.featured-callout p:last-child {
+  margin-bottom: 0;
+}
+
+/* Screenshot / hero image inside the callout */
+.featured-image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 1.25rem auto;
+  border-radius: 6px;
+  border: 1px solid var(--border-color, rgba(128, 128, 128, 0.2));
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.featured-image:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.14);
+  transform: translateY(-2px);
+}
+
+/* Selected homepage outcomes */
+.outcomes-list {
+  margin: 1.5rem 0 2rem;
+}
+
+.outcome-card {
+  position: relative;
+  padding: 1.25rem 0 1.25rem 1.6rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.outcome-card::before {
+  position: absolute;
+  top: 1.7rem;
+  left: 0;
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  background: var(--primary-color);
+  content: "";
+}
+
+.outcome-card:first-child {
+  border-top-color: var(--primary-color);
+}
+
+.outcome-heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.75rem;
+}
+
+.outcome-card h3 {
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.outcome-card h3::before {
+  content: "";
+}
+
+.outcome-label {
+  order: 2;
+  margin: 0;
+  color: var(--text-2);
+  font-size: 0.95em;
+}
+
+.outcome-card > p:not(.outcome-label) {
+  max-width: 48rem;
+  margin-bottom: 1rem;
+  color: var(--text-1);
+}
+
+.outcome-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin-top: 0.8rem;
+}
+
+.outcome-links a {
+  font-family: var(--header-font);
+  font-size: 0.9em;
+  font-weight: 600;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.25em;
+  transition: background-color 160ms ease, color 160ms ease;
+}
+
+.outcome-links a:hover {
+  background-color: var(--primary-color) !important;
+  color: var(--hover-color) !important;
+}
+
+/* Projects page */
+.project-page > p:first-of-type {
+  max-width: 46rem;
+  font-size: 1.08em;
+}
+
+.project-section {
+  margin-top: 4rem;
+}
+
+.project-section-heading {
+  margin-bottom: 1.5rem;
+}
+
+.project-section-heading h2,
+.project-featured h3,
+.project-card h3 {
+  margin-top: 0.35rem;
+}
+
+.project-section-heading h2::before,
+.project-featured h3::before,
+.project-card h3::before {
+  content: "";
+}
+
+.project-kicker {
+  margin: 0;
+  color: var(--text-2);
+  font-family: var(--text-font);
+  font-size: 0.95em;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.project-page {
+  --project-accent: var(--primary-color);
+}
+
+.project-featured {
+  position: relative;
+  padding: 0 0 0 1.6rem;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.project-featured::before {
+  position: absolute;
+  top: 0.45rem;
+  left: 0;
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  background: var(--project-accent);
+  content: "";
+}
+
+.project-featured-heading {
+  display: block;
+}
+
+.project-featured-heading > div {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.75rem;
+}
+
+.project-featured-heading h3,
+.project-card h3 {
+  margin: 0;
+  font-size: 1.35rem;
+}
+
+.project-featured-heading .project-kicker {
+  order: 2;
+}
+
+.project-featured > p,
+.project-card > p:not(.project-kicker) {
+  max-width: 48rem;
+}
+
+.project-tags,
+.project-highlights {
+  padding-left: 1.25rem;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin: 0.7rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.project-tags li {
+  padding: 0;
+  border: 0;
+  color: var(--text-2);
+  font-size: 0.9em;
+}
+
+.project-tags li + li::before {
+  margin-right: 0.35rem;
+  content: "·";
+}
+
+.project-highlights li + li {
+  margin-top: 0.55rem;
+}
+
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin-top: 0.8rem;
+}
+
+.project-links a {
+  font-family: var(--header-font);
+  font-size: 0.9em;
+  font-weight: 600;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.25em;
+  transition: background-color 160ms ease, color 160ms ease;
+}
+
+.project-grid {
+  display: block;
+}
+
+.project-card {
+  position: relative;
+  min-height: 0;
+  padding: 1.25rem 0 1.25rem 1.6rem;
+  border: 0;
+  border-top: 1px solid var(--border-color);
+  border-radius: 0;
+}
+
+.project-card::before {
+  position: absolute;
+  top: 1.7rem;
+  left: 0;
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  background: var(--project-accent);
+  content: "";
+}
+
+.project-card:first-child {
+  border-top-color: var(--project-accent);
+}
+
+.project-card-heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.75rem;
+}
+
+.project-card-heading .project-kicker {
+  order: 2;
+}
+
+.project-card > p:not(.project-kicker) {
+  color: var(--text-1);
+}
+
+.project-links a:hover {
+  background-color: var(--primary-color) !important;
+  color: var(--hover-color) !important;
+  text-decoration-color: transparent;
+}
+
+@media (max-width: 600px) {
+  .project-featured-heading > div,
+  .project-card-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+}
+
+/* Open-source contribution page */
+.oss-page > p:first-of-type {
+  max-width: 46rem;
+  font-size: 1.08em;
+}
+
+.oss-page {
+  --oss-accent: var(--primary-color);
+}
+
+.oss-section {
+  margin-top: 4rem;
+}
+
+.oss-section-heading {
+  margin-bottom: 1.5rem;
+}
+
+.oss-section-heading h2,
+.oss-featured h3,
+.oss-card h3 {
+  margin-top: 0.35rem;
+}
+
+.oss-section-heading h2::before,
+.oss-featured h3::before,
+.oss-card h3::before {
+  content: "";
+}
+
+.oss-kicker {
+  margin: 0;
+  color: var(--text-2);
+  font-family: var(--text-font);
+  font-size: 0.95em;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.oss-featured {
+  position: relative;
+  padding: 0 0 0 1.6rem;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.oss-featured::before,
+.oss-card::before {
+  position: absolute;
+  top: 0.45rem;
+  left: 0;
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  background: var(--oss-accent);
+  content: "";
+}
+
+.oss-featured-heading {
+  display: block;
+}
+
+.oss-featured-heading > div,
+.oss-card-heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.75rem;
+}
+
+.oss-featured-heading h3,
+.oss-card h3 {
+  margin: 0;
+  font-size: 1.35rem;
+}
+
+.oss-featured-heading .oss-kicker,
+.oss-card-heading .oss-kicker {
+  order: 2;
+}
+
+.oss-featured > p,
+.oss-card > p:not(.oss-kicker) {
+  max-width: 48rem;
+}
+
+.oss-tags,
+.oss-highlights {
+  padding-left: 1.25rem;
+}
+
+.oss-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin: 0.7rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.oss-tags li {
+  padding: 0;
+  border: 0;
+  color: var(--text-2);
+  font-size: 0.9em;
+}
+
+.oss-tags li + li::before {
+  margin-right: 0.35rem;
+  content: "·";
+}
+
+.oss-highlights li + li {
+  margin-top: 0.55rem;
+}
+
+.oss-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin-top: 0.8rem;
+}
+
+.oss-links a,
+.oss-card-link {
+  font-family: var(--header-font);
+  font-size: 0.9em;
+  font-weight: 600;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.25em;
+  transition: background-color 160ms ease, color 160ms ease;
+}
+
+.oss-grid {
+  display: block;
+}
+
+.oss-card {
+  position: relative;
+  min-height: 0;
+  padding: 1.25rem 0 1.25rem 1.6rem;
+  border: 0;
+  border-top: 1px solid var(--border-color);
+  border-radius: 0;
+}
+
+.oss-card::before {
+  top: 1.7rem;
+}
+
+.oss-card:first-child {
+  border-top-color: var(--oss-accent);
+}
+
+.oss-card p:not(.oss-kicker) {
+  color: var(--text-1);
+}
+
+.oss-card-link {
+  display: inline-block;
+  margin-top: 0.8rem;
+}
+
+.oss-links a:hover,
+.oss-card-link:hover {
+  background-color: var(--primary-color) !important;
+  color: var(--hover-color) !important;
+  text-decoration-color: transparent;
+}
+
+.oss-closing {
+  max-width: 46rem;
+  margin-top: 3rem;
+  color: var(--text-1);
+}
+
+@media (max-width: 600px) {
+  .oss-featured-heading > div,
+  .oss-card-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+}
