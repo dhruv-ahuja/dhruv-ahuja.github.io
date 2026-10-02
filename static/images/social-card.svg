@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#111318"/>
+      <stop offset="1" stop-color="#1b151b"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="88" y1="478" x2="292" y2="172" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ff8c00"/>
+      <stop offset="1" stop-color="#ff2973"/>
+    </linearGradient>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0v48" fill="none" stroke="#ffffff" stroke-opacity=".035"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="url(#background)"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <rect x="72" y="135" width="230" height="230" rx="50" fill="#0b0d11" stroke="#ffffff" stroke-opacity=".09" stroke-width="2"/>
+  <path d="M120 185v130h43c47 0 79-25 79-65s-32-65-79-65h-43Z" fill="none" stroke="#f8f8f2" stroke-width="21" stroke-linejoin="round"/>
+  <path d="m174 301 43-101m-27 61h38" fill="none" stroke="url(#accent)" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="359" y="169" width="90" height="7" rx="3.5" fill="#ff8c00"/>
+  <rect x="449" y="169" width="90" height="7" rx="3.5" fill="#ff2973"/>
+  <text x="358" y="270" fill="#f8f8f2" font-family="Space Grotesk, Arial, sans-serif" font-size="77" font-weight="700" letter-spacing="-2">Dhruv Ahuja</text>
+  <text x="362" y="330" fill="#c6c8ce" font-family="JetBrains Mono, Menlo, monospace" font-size="27">DevRel / growth / technical content</text>
+  <text x="362" y="385" fill="#c6c8ce" font-family="JetBrains Mono, Menlo, monospace" font-size="27">Open source / Python / Rust</text>
+  <text x="75" y="540" fill="#9699a2" font-family="JetBrains Mono, Menlo, monospace" font-size="23">dhruvahuja.me</text>
+  <circle cx="1094" cy="524" r="4" fill="#ff2973"/>
+  <circle cx="1114" cy="524" r="4" fill="#ff8c00"/>
+  <circle cx="1134" cy="524" r="4" fill="#f8f8f2"/>
+</svg>

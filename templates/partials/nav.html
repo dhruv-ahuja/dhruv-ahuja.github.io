@@ -11,7 +11,7 @@
 
         <div class="socials">
             {% for social in config.extra.socials %}
-                <a rel="me" href="{{ social.url }}" class="social" target="_blank" rel="noopener">
+                <a rel="me noopener" href="{{ social.url }}" class="social" target="_blank">
                     <img alt="{{ social.name }}"
                          src="{{ get_url(path="icons/social/" ~ social.icon ~ ".svg") }}">
                 </a>
@@ -29,11 +29,13 @@
                id="rss-button"
                class="rss-button nav-icon-btn"
                title="RSS / Atom Feed"
+               aria-label="Subscribe via RSS / Atom feed"
                target="_blank"
                rel="noopener">
-                <img src="{{ get_url(path='icons/social/rss.svg') }}"
-                     alt="RSS Feed"
-                     class="rss-icon">
+                 <img src="{{ get_url(path='icons/social/rss.svg') }}"
+                      alt=""
+                      aria-hidden="true"
+                      class="rss-icon">
             </a>
         {% endif %}
 
