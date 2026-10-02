@@ -16,18 +16,49 @@ Today, I work at the intersection of growth, DevRel, and technical content at [S
 
 Before DevRel, I worked as a software engineer. Python was the first language I learnt and is still the one I reach for most, though Rust has led me down some of my favourite technical rabbit holes, from FFI and concurrency to instrumentation. I also spend a lot of time on Reddit and Hacker News, following nuanced technical discussions and learning what developers actually struggle with.
 
-## Featured Work
+## Featured Outcomes
 
-<div class="featured-callout">
+Here are a few outcomes from building, writing, and showing up in public — outcomes of work that I'm proud of. The work behind each one is linked where possible.
 
-My write-up on **[OpenTelemetry for Rust Developers](https://signoz.io/blog/opentelemetry-rust/)** made it to the **front page of Hacker News**. I built a complete demo application and wrote a comprehensive guide covering instrumentation, crate choices, and real-life scenarios, which resonated well with the community.
+<div class="outcomes-grid">
+<article class="outcome-card">
+<p class="outcome-label">Open source / 2026</p>
+<h3>OpenTelemetry member</h3>
+<p>I became an OpenTelemetry member after contributing across six repositories through the End User and Contributor Experience SIGs, working on documentation, community development, and upstream content.</p>
+<div class="outcome-links">
+<a href="/oss/">OSS work <span aria-hidden="true">&#8599;</span></a>
+<a href="https://opentelemetry.io/" target="_blank" rel="noopener">OpenTelemetry <span aria-hidden="true">&#8599;</span></a>
+</div>
+</article>
 
-<a href="https://news.ycombinator.com/item?id=47321579" target="_blank">
-<img src="/images/hn-front-page.jpg" alt="OpenTelemetry for Rust Developers on the Hacker News front page" class="featured-image" />
-</a>
+<article class="outcome-card">
+<p class="outcome-label">Research / publication</p>
+<h3>Prometheus and OTel survey</h3>
+<p>I helped turn raw responses into the 2026 interoperability survey, published by both OpenTelemetry and Prometheus. The analysis found that ease of use rose from 3.1 to 3.6, while the share finding the projects hard to use together fell from 29% to 10%.</p>
+<div class="outcome-links">
+<a href="https://opentelemetry.io/blog/2026/otel-prometheus-interoperability/" target="_blank" rel="noopener">Read the findings <span aria-hidden="true">&#8599;</span></a>
+</div>
+</article>
 
-See the [Hacker News discussion](https://news.ycombinator.com/item?id=47321579) and the [Reddit thread](https://www.reddit.com/r/rust/comments/1rptgzy/implementing_opentelemetry_in_rust_applications/) for community reactions.
+<article class="outcome-card">
+<p class="outcome-label">Technical content / community</p>
+<h3>Writing that travels</h3>
+<p>At SigNoz, I write deep OpenTelemetry guides grounded in working demos. My Rust guide reached <strong>#17 on Hacker News</strong>, while my broader content work drove 15,000+ unique visitors from non-search channels in six months.</p>
+<div class="outcome-links">
+<a href="https://signoz.io/blog/opentelemetry-rust/" target="_blank" rel="noopener">Read the Rust guide <span aria-hidden="true">&#8599;</span></a>
+<a href="https://news.ycombinator.com/item?id=47321579" target="_blank" rel="noopener">HN discussion <span aria-hidden="true">&#8599;</span></a>
+</div>
+</article>
 
+<article class="outcome-card">
+<p class="outcome-label">Build in public / Python and Rust</p>
+<h3>spoti-dl</h3>
+<p>The first project I took seriously, iterated on in public, and used to learn Rust. The CLI has crossed 45,000 PyPI downloads and 70 GitHub stars.</p>
+<div class="outcome-links">
+<a href="https://github.com/dhruv-ahuja/spoti-dl" target="_blank" rel="noopener">View the repository <span aria-hidden="true">&#8599;</span></a>
+<a href="https://pypi.org/project/spoti-dl/" target="_blank" rel="noopener">PyPI package <span aria-hidden="true">&#8599;</span></a>
+</div>
+</article>
 </div>
 
 ## Interests
