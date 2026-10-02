@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+    <main>
+        <article>
+            <section class="body project-page">
+                {{ post_macros::page_header(title=section.title) }}
+                {{ section.content | safe }}
+
+                <section class="project-section" aria-labelledby="featured-project">
+                    <div class="project-section-heading">
+                        <p class="project-kicker">The Highlight</p>
+                        <!-- <h2 id="featured-project">spoti-dl</h2> -->
+                    </div>
+
+                    {% for page in section.pages %}
+                        {% if page.extra.featured %}
+                            <article class="project-featured">
+                                <div class="project-featured-heading">
+                                    <div>
+                                        <p class="project-kicker">{{ page.extra.eyebrow }}</p>
+                                        <h3>{{ page.title }}</h3>
+                                    </div>
+                                    <span class="project-status">{{ page.extra.status | default(value="Project") }}</span>
+                                </div>
+
+                                <p>{{ page.description }}</p>
+
+                                {% if page.extra.stack %}
+                                    <ul class="project-tags" aria-label="Technology stack">
+                                        {% for technology in page.extra.stack %}
+                                            <li>{{ technology }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                {% endif %}
+
+                                {% if page.extra.highlights %}
+                                    <ul class="project-highlights">
+                                        {% for highlight in page.extra.highlights %}
+                                            <li>{{ highlight }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                {% endif %}
+
+                                <div class="project-links">
+                                    <a href="{{ page.extra.primary_url }}" target="_blank" rel="noopener">{{ page.extra.primary_label }} <span aria-hidden="true">&#8599;</span></a>
+                                    <a href="{{ page.extra.secondary_url }}">{{ page.extra.secondary_label }} <span aria-hidden="true">&#8599;</span></a>
+                                </div>
+                            </article>
+                        {% endif %}
+                    {% endfor %}
+                </section>
+
+                <section class="project-section" aria-labelledby="other-projects">
+                    <div class="project-section-heading">
+                        <p class="project-kicker">Other experiments</p>
+                        <h2 id="other-projects">More projects</h2>
+                    </div>
+
+                    <div class="project-grid">
+                        {% for page in section.pages %}
+                            {% if not page.extra.featured %}
+                                <article class="project-card">
+                                    <p class="project-kicker">{{ page.extra.eyebrow | default(value="Software project") }}</p>
+                                    <h3>{{ page.title }}</h3>
+                                    <p>{{ page.description }}</p>
+
+                                    {% if page.extra.stack %}
+                                        <ul class="project-tags" aria-label="Technology stack">
+                                            {% for technology in page.extra.stack %}
+                                                <li>{{ technology }}</li>
+                                            {% endfor %}
+                                        </ul>
+                                    {% endif %}
+
+                                    <div class="project-links">
+                                        <a href="{{ page.extra.primary_url }}" target="_blank" rel="noopener">{{ page.extra.primary_label }} <span aria-hidden="true">&#8599;</span></a>
+                                        {% if page.extra.secondary_url %}
+                                            <a href="{{ page.extra.secondary_url }}">{{ page.extra.secondary_label }} <span aria-hidden="true">&#8599;</span></a>
+                                        {% endif %}
+                                    </div>
+                                </article>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </section>
+            </section>
+        </article>
+    </main>
+{% endblock main_content %}

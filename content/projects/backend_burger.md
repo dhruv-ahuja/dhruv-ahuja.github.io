@@ -1,8 +1,18 @@
 +++
 title = "backend_burger"
-description = "A backend application I'm building to learn and integrate best practices and advanced concepts. This project serves as my playground for experimenting with different architectural patterns, database designs, API implementations, and deployment strategies. I'm using it to understand how to build scalable, maintainable, and secure backend services while learning about microservices, containerization, and cloud deployment."
+description = "A backend systems playground for working through API design, database modelling, asynchronous jobs, deployment, and service boundaries. It is also where I developed and benchmarked the MongoDB ingestion workflow used in my database-optimisation writing."
 weight = 3
 
 [extra]
+eyebrow = "Backend systems / Python and MongoDB"
+stack = ["Python", "MongoDB", "Docker"]
 link_to = "https://github.com/dhruv-ahuja/backend_burger"
+primary_label = "View repository"
+primary_url = "https://github.com/dhruv-ahuja/backend_burger"
+secondary_label = "Read the database optimisation write-up"
+secondary_url = "https://dhruvahuja.me/posts/optimizing-mongo-writes/"
 +++
+
+This was my place for testing architectural ideas against working code: API implementations, data workflows, queues, deployment strategies, and the tradeoffs that appear once a toy implementation has to do something repeatably.
+
+It later became the backend for the WinterOrb application.
