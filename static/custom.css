@@ -246,3 +246,151 @@ code::selection {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.14);
   transform: translateY(-2px);
 }
+
+/* Open-source contribution page */
+.oss-page > p:first-of-type {
+  max-width: 46rem;
+  font-size: 1.08em;
+}
+
+.oss-section {
+  margin-top: 4rem;
+}
+
+.oss-section-heading {
+  margin-bottom: 1.25rem;
+}
+
+.oss-section-heading h2,
+.oss-featured h3,
+.oss-card h3 {
+  margin-top: 0.35rem;
+}
+
+.oss-section-heading h2::before,
+.oss-featured h3::before,
+.oss-card h3::before {
+  content: "";
+}
+
+.oss-kicker {
+  margin: 0;
+  color: var(--primary-color);
+  font-family: var(--header-font);
+  font-size: 0.78em;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.oss-featured {
+  padding: 1.75rem;
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--primary-color);
+  border-radius: 0 8px 8px 0;
+  background: var(--bg-1, rgba(128, 128, 128, 0.06));
+}
+
+.oss-featured-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.oss-featured-heading h3,
+.oss-card h3 {
+  font-size: 1.4rem;
+}
+
+.oss-status {
+  flex: 0 0 auto;
+  padding: 0.28rem 0.6rem;
+  border: 1px solid var(--primary-color);
+  border-radius: 999px;
+  color: var(--primary-color);
+  font-size: 0.78em;
+  white-space: nowrap;
+}
+
+.oss-tags,
+.oss-highlights {
+  padding-left: 1.25rem;
+}
+
+.oss-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0;
+  list-style: none;
+}
+
+.oss-tags li {
+  padding: 0.3rem 0.6rem;
+  border: 1px solid var(--border-color);
+  border-radius: 999px;
+  color: var(--text-1);
+  font-size: 0.82em;
+}
+
+.oss-highlights li + li {
+  margin-top: 0.55rem;
+}
+
+.oss-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.35rem;
+}
+
+.oss-links a,
+.oss-card-link {
+  font-family: var(--header-font);
+  font-size: 0.9em;
+  font-weight: 600;
+}
+
+.oss-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.oss-card {
+  display: flex;
+  flex-direction: column;
+  padding: 1.4rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+}
+
+.oss-card p:not(.oss-kicker) {
+  color: var(--text-1);
+}
+
+.oss-card-link {
+  margin-top: auto;
+  padding-top: 0.75rem;
+}
+
+.oss-closing {
+  max-width: 46rem;
+  margin-top: 3rem;
+  color: var(--text-1);
+  font-style: italic;
+}
+
+@media (max-width: 600px) {
+  .oss-featured {
+    padding: 1.25rem;
+  }
+
+  .oss-featured-heading {
+    flex-direction: column;
+  }
+
+  .oss-grid {
+    grid-template-columns: 1fr;
+  }
+}

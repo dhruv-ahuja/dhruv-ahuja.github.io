@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+    <main>
+        <article>
+            <section class="body oss-page">
+                {{ post_macros::page_header(title=section.title) }}
+                {{ section.content | safe }}
+
+                <section class="oss-section" aria-labelledby="current-oss-work">
+                    <div class="oss-section-heading">
+                        <p class="oss-kicker">Selected upstream work</p>
+                        <h2 id="current-oss-work">Current focus</h2>
+                    </div>
+
+                    {% for page in section.pages %}
+                        {% if page.extra.featured %}
+                            <article class="oss-featured">
+                                <div class="oss-featured-heading">
+                                    <div>
+                                        <p class="oss-kicker">{{ page.extra.eyebrow }}</p>
+                                        <h3>{{ page.title }}</h3>
+                                    </div>
+                                    <span class="oss-status">Member</span>
+                                </div>
+
+                                <p>{{ page.description }}</p>
+
+                                {% if page.extra.areas %}
+                                    <ul class="oss-tags" aria-label="Areas of contribution">
+                                        {% for area in page.extra.areas %}
+                                            <li>{{ area }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                {% endif %}
+
+                                {% if page.extra.highlights %}
+                                    <ul class="oss-highlights">
+                                        {% for highlight in page.extra.highlights %}
+                                            <li>{{ highlight }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                {% endif %}
+
+                                <div class="oss-links">
+                                    <a href="{{ page.extra.primary_url }}" target="_blank" rel="noopener">{{ page.extra.primary_label }} <span aria-hidden="true">↗</span></a>
+                                    <a href="{{ page.extra.secondary_url }}" target="_blank" rel="noopener">{{ page.extra.secondary_label }} <span aria-hidden="true">↗</span></a>
+                                </div>
+                            </article>
+                        {% endif %}
+                    {% endfor %}
+                </section>
+
+                <section class="oss-section" aria-labelledby="other-oss-work">
+                    <div class="oss-section-heading">
+                        <p class="oss-kicker">Earlier contributions</p>
+                        <h2 id="other-oss-work">More work in the ecosystem</h2>
+                    </div>
+
+                    <div class="oss-grid">
+                        {% for page in section.pages %}
+                            {% if not page.extra.featured %}
+                                <article class="oss-card">
+                                    <p class="oss-kicker">{{ page.extra.eyebrow | default(value="Open source contribution") }}</p>
+                                    <h3>{{ page.title }}</h3>
+                                    <p>{{ page.description }}</p>
+                                    <a class="oss-card-link" href="{{ page.extra.link_to }}" target="_blank" rel="noopener">View contributions <span aria-hidden="true">↗</span></a>
+                                </article>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </section>
+
+                <p class="oss-closing">I am still early in this part of the journey, but I am increasingly drawn to work that sits upstream: contributing context, improving the way projects communicate, and helping turn community feedback into better software.</p>
+            </section>
+        </article>
+    </main>
+{% endblock main_content %}

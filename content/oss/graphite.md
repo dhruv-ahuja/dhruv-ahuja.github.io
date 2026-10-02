@@ -1,13 +1,12 @@
 +++
 title = "Graphite Editor"
-description = "Contributed to the open-source 2D graphics editor with 21K+ stars on GitHub. Implemented core node graph functionality including automatic link reconnection when deleting nodes, and added new creative tools like the Color Overlay node."
+description = "Contributed to the Rust, Svelte, and WebAssembly-based 2D graphics editor through design discussions, refactors, bug fixes, and new node-graph features."
 weight = 2
 
 [extra]
 link_to = "https://github.com/GraphiteEditor/Graphite/pulls?q=is%3Apr+author%3Adhruv-ahuja"
 +++
 
-## Summary
+## Contribution
 
-Contributed to the open-source 2D graphics editor with 21K+ stars on GitHub. Implemented core node graph functionality including automatic link reconnection when deleting nodes, and added new creative tools like the Color Overlay node.
-My work enhanced the user experience by fixing some commonly encountered bugs and adding adding to the available toolbox.
+Contributed to the open-source 2D graphics editor through high-level design discussions, refactors, and feature work. This included automatic link reconnection when deleting nodes, fixes for common user-facing bugs, and additions such as the Color Overlay node.
