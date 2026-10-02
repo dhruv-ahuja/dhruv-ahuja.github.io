@@ -4,6 +4,7 @@ description = "Contributed to Pydantic's Logfire observability platform through 
 weight = 1
 
 [extra]
+eyebrow = "observability and Python"
 link_to = "https://github.com/pydantic/logfire/pulls?q=is%3Apr+author%3Adhruv-ahuja"
 +++
 

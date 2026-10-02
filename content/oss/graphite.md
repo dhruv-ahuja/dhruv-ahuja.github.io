@@ -4,6 +4,7 @@ description = "Contributed to the Rust, Svelte, and WebAssembly-based 2D graphic
 weight = 2
 
 [extra]
+eyebrow = "graphics editor and WebAssembly"
 link_to = "https://github.com/GraphiteEditor/Graphite/pulls?q=is%3Apr+author%3Adhruv-ahuja"
 +++
 

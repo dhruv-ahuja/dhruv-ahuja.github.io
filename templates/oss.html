@@ -7,12 +7,7 @@
                 {{ post_macros::page_header(title=section.title) }}
                 {{ section.content | safe }}
 
-                <section class="oss-section" aria-labelledby="current-oss-work">
-                    <div class="oss-section-heading">
-                        <p class="oss-kicker">Selected upstream work</p>
-                        <h2 id="current-oss-work">Current focus</h2>
-                    </div>
-
+                <section class="oss-section" aria-label="OpenTelemetry contributions">
                     {% for page in section.pages %}
                         {% if page.extra.featured %}
                             <article class="oss-featured">
@@ -21,7 +16,6 @@
                                         <p class="oss-kicker">{{ page.extra.eyebrow }}</p>
                                         <h3>{{ page.title }}</h3>
                                     </div>
-                                    <span class="oss-status">Member</span>
                                 </div>
 
                                 <p>{{ page.description }}</p>
@@ -44,7 +38,12 @@
 
                                 <div class="oss-links">
                                     <a href="{{ page.extra.primary_url }}" target="_blank" rel="noopener">{{ page.extra.primary_label }} <span aria-hidden="true">↗</span></a>
-                                    <a href="{{ page.extra.secondary_url }}" target="_blank" rel="noopener">{{ page.extra.secondary_label }} <span aria-hidden="true">↗</span></a>
+                                    {% if page.extra.pull_requests_url %}
+                                        <a href="{{ page.extra.pull_requests_url }}" target="_blank" rel="noopener">{{ page.extra.pull_requests_label }} <span aria-hidden="true">↗</span></a>
+                                    {% endif %}
+                                    {% if page.extra.issues_url %}
+                                        <a href="{{ page.extra.issues_url }}" target="_blank" rel="noopener">{{ page.extra.issues_label }} <span aria-hidden="true">↗</span></a>
+                                    {% endif %}
                                 </div>
                             </article>
                         {% endif %}
@@ -53,16 +52,17 @@
 
                 <section class="oss-section" aria-labelledby="other-oss-work">
                     <div class="oss-section-heading">
-                        <p class="oss-kicker">Earlier contributions</p>
-                        <h2 id="other-oss-work">More work in the ecosystem</h2>
+                        <h2 id="other-oss-work">Also contributed to</h2>
                     </div>
 
                     <div class="oss-grid">
                         {% for page in section.pages %}
                             {% if not page.extra.featured %}
                                 <article class="oss-card">
-                                    <p class="oss-kicker">{{ page.extra.eyebrow | default(value="Open source contribution") }}</p>
-                                    <h3>{{ page.title }}</h3>
+                                    <div class="oss-card-heading">
+                                        <p class="oss-kicker">{{ page.extra.eyebrow | default(value="Open source contribution") }}</p>
+                                        <h3>{{ page.title }}</h3>
+                                    </div>
                                     <p>{{ page.description }}</p>
                                     <a class="oss-card-link" href="{{ page.extra.link_to }}" target="_blank" rel="noopener">View contributions <span aria-hidden="true">↗</span></a>
                                 </article>
@@ -71,7 +71,7 @@
                     </div>
                 </section>
 
-                <p class="oss-closing">I am still early in this part of the journey, but I am increasingly drawn to work that sits upstream: contributing context, improving the way projects communicate, and helping turn community feedback into better software.</p>
+                <p class="oss-closing">I’m drawn to upstream work: helping projects communicate clearly, turning community feedback into useful changes, and making the software better for the people who use it.</p>
             </section>
         </article>
     </main>

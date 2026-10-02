@@ -5,4 +5,6 @@ sort_by = "weight"
 template = "oss.html"
 +++
 
-Open source is where I learned to build in public, ask better questions, and take feedback seriously. It is also what defined my professional career from the very beginning. These days, my contributions sit mostly around observability, developer experience, documentation, and community work.
+Open source helped build my career. I learnt how to collaborate with contributors from around the world, ask better questions, and build things that people actually use, and give feedback on. It is also what propelled my professional career from the very beginning.
+
+These days, my contributions sit mostly around observability, developer experience, documentation, and community work.

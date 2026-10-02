@@ -506,12 +506,16 @@ code::selection {
   font-size: 1.08em;
 }
 
+.oss-page {
+  --oss-accent: #a5682b;
+}
+
 .oss-section {
   margin-top: 4rem;
 }
 
 .oss-section-heading {
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.5rem;
 }
 
 .oss-section-heading h2,
@@ -528,41 +532,59 @@ code::selection {
 
 .oss-kicker {
   margin: 0;
-  color: var(--primary-color);
-  font-family: var(--header-font);
-  font-size: 0.78em;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  color: var(--text-2);
+  font-family: var(--text-font);
+  font-size: 0.95em;
+  letter-spacing: 0;
+  text-transform: none;
 }
 
 .oss-featured {
-  padding: 1.75rem;
-  border: 1px solid var(--border-color);
-  border-left: 4px solid var(--primary-color);
-  border-radius: 0 8px 8px 0;
-  background: var(--bg-1, rgba(128, 128, 128, 0.06));
+  position: relative;
+  padding: 0 0 0 1.6rem;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.oss-featured::before,
+.oss-card::before {
+  position: absolute;
+  top: 0.45rem;
+  left: 0;
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  background: var(--oss-accent);
+  content: "";
 }
 
 .oss-featured-heading {
+  display: block;
+}
+
+.oss-featured-heading > div,
+.oss-card-heading {
   display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.75rem;
 }
 
 .oss-featured-heading h3,
 .oss-card h3 {
-  font-size: 1.4rem;
+  margin: 0;
+  font-size: 1.35rem;
 }
 
-.oss-status {
-  flex: 0 0 auto;
-  padding: 0.28rem 0.6rem;
-  border: 1px solid var(--primary-color);
-  border-radius: 999px;
-  color: var(--primary-color);
-  font-size: 0.78em;
-  white-space: nowrap;
+.oss-featured-heading .oss-kicker,
+.oss-card-heading .oss-kicker {
+  order: 2;
+}
+
+.oss-featured > p,
+.oss-card > p:not(.oss-kicker) {
+  max-width: 48rem;
 }
 
 .oss-tags,
@@ -573,17 +595,22 @@ code::selection {
 .oss-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: 0.35rem;
+  margin: 0.7rem 0 0;
   padding: 0;
   list-style: none;
 }
 
 .oss-tags li {
-  padding: 0.3rem 0.6rem;
-  border: 1px solid var(--border-color);
-  border-radius: 999px;
-  color: var(--text-1);
-  font-size: 0.82em;
+  padding: 0;
+  border: 0;
+  color: var(--text-2);
+  font-size: 0.9em;
+}
+
+.oss-tags li + li::before {
+  margin-right: 0.35rem;
+  content: "·";
 }
 
 .oss-highlights li + li {
@@ -593,8 +620,8 @@ code::selection {
 .oss-links {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
-  margin-top: 1.35rem;
+  gap: 0.9rem;
+  margin-top: 0.8rem;
 }
 
 .oss-links a,
@@ -602,20 +629,30 @@ code::selection {
   font-family: var(--header-font);
   font-size: 0.9em;
   font-weight: 600;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.25em;
+  transition: background-color 160ms ease, color 160ms ease;
 }
 
 .oss-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1rem;
+  display: block;
 }
 
 .oss-card {
-  display: flex;
-  flex-direction: column;
-  padding: 1.4rem;
-  border: 1px solid var(--border-color);
-  border-radius: 8px;
+  position: relative;
+  min-height: 0;
+  padding: 1.25rem 0 1.25rem 1.6rem;
+  border: 0;
+  border-top: 1px solid var(--border-color);
+  border-radius: 0;
+}
+
+.oss-card::before {
+  top: 1.7rem;
+}
+
+.oss-card:first-child {
+  border-top-color: var(--oss-accent);
 }
 
 .oss-card p:not(.oss-kicker) {
@@ -623,27 +660,28 @@ code::selection {
 }
 
 .oss-card-link {
-  margin-top: auto;
-  padding-top: 0.75rem;
+  display: inline-block;
+  margin-top: 0.8rem;
+}
+
+.oss-links a:hover,
+.oss-card-link:hover {
+  background-color: var(--primary-color) !important;
+  color: var(--hover-color) !important;
+  text-decoration-color: transparent;
 }
 
 .oss-closing {
   max-width: 46rem;
   margin-top: 3rem;
   color: var(--text-1);
-  font-style: italic;
 }
 
 @media (max-width: 600px) {
-  .oss-featured {
-    padding: 1.25rem;
-  }
-
-  .oss-featured-heading {
+  .oss-featured-heading > div,
+  .oss-card-heading {
+    align-items: flex-start;
     flex-direction: column;
-  }
-
-  .oss-grid {
-    grid-template-columns: 1fr;
+    gap: 0.2rem;
   }
 }
