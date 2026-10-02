@@ -323,7 +323,7 @@ code::selection {
 }
 
 .project-section-heading {
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.5rem;
 }
 
 .project-section-heading h2,
@@ -340,41 +340,60 @@ code::selection {
 
 .project-kicker {
   margin: 0;
-  color: var(--primary-color);
-  font-family: var(--header-font);
-  font-size: 0.78em;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  color: var(--text-2);
+  font-family: var(--text-font);
+  font-size: 0.95em;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.project-page {
+  --project-accent: #a5682b;
 }
 
 .project-featured {
-  padding: 1.75rem;
-  border: 1px solid var(--border-color);
-  border-left: 4px solid var(--primary-color);
-  border-radius: 0 8px 8px 0;
-  background: var(--bg-1, rgba(128, 128, 128, 0.06));
+  position: relative;
+  padding: 0 0 0 1.6rem;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.project-featured::before {
+  position: absolute;
+  top: 0.45rem;
+  left: 0;
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  background: var(--project-accent);
+  content: "";
 }
 
 .project-featured-heading {
+  display: block;
+}
+
+.project-featured-heading > div {
   display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.75rem;
 }
 
 .project-featured-heading h3,
 .project-card h3 {
-  font-size: 1.4rem;
+  margin: 0;
+  font-size: 1.35rem;
 }
 
-.project-status {
-  flex: 0 0 auto;
-  padding: 0.28rem 0.6rem;
-  border: 1px solid var(--primary-color);
-  border-radius: 999px;
-  color: var(--primary-color);
-  font-size: 0.78em;
-  white-space: nowrap;
+.project-featured-heading .project-kicker {
+  order: 2;
+}
+
+.project-featured > p,
+.project-card > p:not(.project-kicker) {
+  max-width: 48rem;
 }
 
 .project-tags,
@@ -385,17 +404,22 @@ code::selection {
 .project-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: 0.35rem;
+  margin: 0.7rem 0 0;
   padding: 0;
   list-style: none;
 }
 
 .project-tags li {
-  padding: 0.3rem 0.6rem;
-  border: 1px solid var(--border-color);
-  border-radius: 999px;
-  color: var(--text-1);
-  font-size: 0.82em;
+  padding: 0;
+  border: 0;
+  color: var(--text-2);
+  font-size: 0.9em;
+}
+
+.project-tags li + li::before {
+  margin-right: 0.35rem;
+  content: "·";
 }
 
 .project-highlights li + li {
@@ -405,50 +429,74 @@ code::selection {
 .project-links {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
-  margin-top: 1.35rem;
+  gap: 0.9rem;
+  margin-top: 0.8rem;
 }
 
 .project-links a {
   font-family: var(--header-font);
   font-size: 0.9em;
   font-weight: 600;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.25em;
+  transition: background-color 160ms ease, color 160ms ease;
 }
 
 .project-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1rem;
+  display: block;
 }
 
 .project-card {
+  position: relative;
+  min-height: 0;
+  padding: 1.25rem 0 1.25rem 1.6rem;
+  border: 0;
+  border-top: 1px solid var(--border-color);
+  border-radius: 0;
+}
+
+.project-card::before {
+  position: absolute;
+  top: 1.7rem;
+  left: 0;
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  background: var(--project-accent);
+  content: "";
+}
+
+.project-card:first-child {
+  border-top-color: var(--project-accent);
+}
+
+.project-card-heading {
   display: flex;
-  flex-direction: column;
-  padding: 1.4rem;
-  border: 1px solid var(--border-color);
-  border-radius: 8px;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.75rem;
+}
+
+.project-card-heading .project-kicker {
+  order: 2;
 }
 
 .project-card > p:not(.project-kicker) {
   color: var(--text-1);
 }
 
-.project-card .project-links {
-  margin-top: auto;
-  padding-top: 0.75rem;
+.project-links a:hover {
+  background-color: var(--primary-color) !important;
+  color: var(--hover-color) !important;
+  text-decoration-color: transparent;
 }
 
 @media (max-width: 600px) {
-  .project-featured {
-    padding: 1.25rem;
-  }
-
-  .project-featured-heading {
+  .project-featured-heading > div,
+  .project-card-heading {
+    align-items: flex-start;
     flex-direction: column;
-  }
-
-  .project-grid {
-    grid-template-columns: 1fr;
+    gap: 0.2rem;
   }
 }
 

@@ -7,12 +7,7 @@
                 {{ post_macros::page_header(title=section.title) }}
                 {{ section.content | safe }}
 
-                <section class="project-section" aria-labelledby="featured-project">
-                    <div class="project-section-heading">
-                        <p class="project-kicker">Featured project</p>
-                        <!-- <h2 id="featured-project">spoti-dl</h2> -->
-                    </div>
-
+                <section class="project-section" aria-label="Featured project">
                     {% for page in section.pages %}
                         {% if page.extra.featured %}
                             <article class="project-featured">
@@ -21,7 +16,6 @@
                                         <p class="project-kicker">{{ page.extra.eyebrow }}</p>
                                         <h3>{{ page.title }}</h3>
                                     </div>
-                                    <span class="project-status">{{ page.extra.status | default(value="Project") }}</span>
                                 </div>
 
                                 <p>{{ page.description }}</p>
@@ -53,16 +47,17 @@
 
                 <section class="project-section" aria-labelledby="other-projects">
                     <div class="project-section-heading">
-                        <p class="project-kicker">Other projects</p>
-                        <h2 id="other-projects">More projects</h2>
+                        <h2 id="other-projects">Also built</h2>
                     </div>
 
                     <div class="project-grid">
                         {% for page in section.pages %}
                             {% if not page.extra.featured %}
                                 <article class="project-card">
-                                    <p class="project-kicker">{{ page.extra.eyebrow | default(value="Software project") }}</p>
-                                    <h3>{{ page.title }}</h3>
+                                    <div class="project-card-heading">
+                                        <p class="project-kicker">{{ page.extra.eyebrow | default(value="Software project") }}</p>
+                                        <h3>{{ page.title }}</h3>
+                                    </div>
                                     <p>{{ page.description }}</p>
 
                                     {% if page.extra.stack %}

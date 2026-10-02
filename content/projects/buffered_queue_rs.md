@@ -4,7 +4,7 @@ description = "A bounded blocking queue in Rust. I built it to understand backpr
 weight = 4
 
 [extra]
-eyebrow = "Bounded queue / Rust"
+eyebrow = "Bounded queue and design patterns"
 stack = ["Rust", "Concurrency"]
 link_to = "https://github.com/dhruv-ahuja/buffered-queue-rs"
 primary_label = "View repository"
