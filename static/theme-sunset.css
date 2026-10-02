@@ -1,24 +1,21 @@
-/* Color Scheme 2: Sunset Gradient (Orange and Pink) */
-
-/* Light mode colors */
+/* Teal accent palette */
 :root.light {
-  --primary-color: #FF8C00;
-  --accent-color: #FF5A8A;
-  --hover-color: #FFFFFF;
+  --primary-color: #28766e;
+  --accent-color: #66a99f;
+  --hover-color: #ffffff;
 }
 
-/* Dark mode colors */
 :root.dark {
-  --primary-color: #F56B00;
-  --accent-color: #FF2973;
-  --hover-color: #FFFFFF;
+  --primary-color: #5dd1bd;
+  --accent-color: #94eadc;
+  --hover-color: #09201c;
+  --nav-icon-hover: invert(70%) sepia(28%) saturate(650%) hue-rotate(119deg) brightness(94%) contrast(90%);
 }
 
-/* Default (fallback) colors */
 :root {
-  --primary-color: #F56B00;
-  --accent-color: #FF2973;
-  --hover-color: #FFFFFF;
+  --primary-color: #28766e;
+  --accent-color: #66a99f;
+  --hover-color: #ffffff;
 }
 
 /* Ensure links use the new primary color */

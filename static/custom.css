@@ -23,7 +23,7 @@ nav .left-nav .socials .social img {
    --nav-icon-filter: invert(1) → icons flip to white on dark backgrounds  */
 :root, :root.light {
   --nav-icon-filter: none;
-  --nav-icon-hover: invert(42%) sepia(99%) saturate(700%) hue-rotate(1deg) brightness(98%) contrast(106%);
+  --nav-icon-hover: invert(40%) sepia(18%) saturate(900%) hue-rotate(100deg) brightness(88%) contrast(89%);
 }
 
 :root.dark {
@@ -58,8 +58,9 @@ nav .left-nav .socials .social img {
   filter: var(--nav-icon-hover);
 }
 
-/* RSS link: suppress the theme-sunset broad a:hover background */
-.rss-button:hover {
+/* Icon controls should tint their images without receiving a text-link block. */
+.rss-button:hover,
+.nav-icon-btn:hover {
   background-color: transparent !important;
   color: inherit !important;
 }
@@ -359,7 +360,7 @@ code::selection {
 }
 
 .project-page {
-  --project-accent: #a5682b;
+  --project-accent: var(--primary-color);
 }
 
 .project-featured {
@@ -518,7 +519,7 @@ code::selection {
 }
 
 .oss-page {
-  --oss-accent: #a5682b;
+  --oss-accent: var(--primary-color);
 }
 
 .oss-section {
