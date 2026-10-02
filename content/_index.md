@@ -6,24 +6,26 @@ template = "home.html"
 
 ## About
 
-I was marketing software before I knew to call it marketing.
+Before I had realized it, I had developed a playbook for marketing the project I worked on, gathering user feedback in Discord channels and on Reddit, before iterating on it, and re-running the feedback loop. This helped me build a penchant for talking to developer folks naturally, gaining their trust with my authenticity, and developing a presence for my work.
 
-When I started teaching myself to program in 2021, I wanted to build software and show my work to the world. I took my projects to Reddit, paid attention to how developers responded, and iterated. One of them, [spoti-dl](https://github.com/dhruv-ahuja/spoti-dl), went on to receive 45,000+ PyPI downloads and 70+ GitHub stars.
+I've been doing this ever since teaching myself to program in 2021. I took my projects to Reddit, paid attention to how developers responded, and iterated. One of them, [spoti-dl](https://github.com/dhruv-ahuja/spoti-dl), went on to receive 45,000+ PyPI downloads and 70+ GitHub stars. This was over the course of a few years, and a couple iterations. The second iteration involved rewriting the project's hot loop in Rust, and writing about the same, _and_ getting that write-up featured in a popular newsletter.
 
-I still thrive on that instinct: go under the hood, build something useful and interesting, and then spark a discussion around it.
+And I still thrive on that instinct to go under the hood the projects I interact with, build something useful and interesting of my own, and then spark a discussion around it.
 
 Today, I work at the intersection of growth, DevRel, and technical content at [SigNoz](https://signoz.io/) (YC W21), an open-source, OpenTelemetry-native observability platform. I create the kind of technical content I want to read myself: grounded in working code, real developer problems, and enough depth to survive scrutiny from the communities it is written for.
 
 Before DevRel, I worked as a software engineer. Python was the first language I learnt and is still the one I reach for most, though Rust has led me down some of my favourite technical rabbit holes, from FFI and concurrency to instrumentation. I also spend a lot of time on Reddit and Hacker News, following nuanced technical discussions and learning what developers actually struggle with.
 
-## Featured Outcomes
+## Selected work
 
-Here are a few outcomes from building, writing, and showing up in public — outcomes of work that I'm proud of. The work behind each one is linked where possible.
+Some things I've built, written, and helped move upstream.
 
-<div class="outcomes-grid">
+<div class="outcomes-list">
 <article class="outcome-card">
-<p class="outcome-label">Open source / 2026</p>
-<h3>OpenTelemetry member</h3>
+<div class="outcome-heading">
+<h3>OpenTelemetry contributions</h3>
+<p class="outcome-label">open source · 2026</p>
+</div>
 <p>I became an OpenTelemetry member after contributing across six repositories through the End User and Contributor Experience SIGs, working on documentation, community development, and upstream content.</p>
 <div class="outcome-links">
 <a href="/oss/">OSS work <span aria-hidden="true">&#8599;</span></a>
@@ -32,8 +34,10 @@ Here are a few outcomes from building, writing, and showing up in public — out
 </article>
 
 <article class="outcome-card">
-<p class="outcome-label">Research / publication</p>
-<h3>Prometheus and OTel survey</h3>
+<div class="outcome-heading">
+<h3>Interoperability survey</h3>
+<p class="outcome-label">research · publication</p>
+</div>
 <p>I helped turn raw responses into the 2026 interoperability survey, published by both OpenTelemetry and Prometheus. The analysis found that ease of use rose from 3.1 to 3.6, while the share finding the projects hard to use together fell from 29% to 10%.</p>
 <div class="outcome-links">
 <a href="https://opentelemetry.io/blog/2026/otel-prometheus-interoperability/" target="_blank" rel="noopener">Read the findings <span aria-hidden="true">&#8599;</span></a>
@@ -41,8 +45,10 @@ Here are a few outcomes from building, writing, and showing up in public — out
 </article>
 
 <article class="outcome-card">
-<p class="outcome-label">Technical content / community</p>
-<h3>Writing that travels</h3>
+<div class="outcome-heading">
+<h3>OpenTelemetry writing</h3>
+<p class="outcome-label">technical content · community</p>
+</div>
 <p>At SigNoz, I write deep OpenTelemetry guides grounded in working demos. My Rust guide reached <strong>#17 on Hacker News</strong>, while my broader content work drove 15,000+ unique visitors from non-search channels in six months.</p>
 <div class="outcome-links">
 <a href="https://signoz.io/blog/opentelemetry-rust/" target="_blank" rel="noopener">Read the Rust guide <span aria-hidden="true">&#8599;</span></a>
@@ -51,8 +57,10 @@ Here are a few outcomes from building, writing, and showing up in public — out
 </article>
 
 <article class="outcome-card">
-<p class="outcome-label">Build in public / Python and Rust</p>
+<div class="outcome-heading">
 <h3>spoti-dl</h3>
+<p class="outcome-label">build in public · Python and Rust</p>
+</div>
 <p>The first project I took seriously, iterated on in public, and used to learn Rust. The CLI has crossed 45,000 PyPI downloads and 70 GitHub stars.</p>
 <div class="outcome-links">
 <a href="https://github.com/dhruv-ahuja/spoti-dl" target="_blank" rel="noopener">View the repository <span aria-hidden="true">&#8599;</span></a>

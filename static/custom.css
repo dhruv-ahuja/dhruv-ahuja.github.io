@@ -248,39 +248,40 @@ code::selection {
 }
 
 /* Selected homepage outcomes */
-.outcomes-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1rem;
+.outcomes-list {
   margin: 1.5rem 0 2rem;
 }
 
 .outcome-card {
+  position: relative;
+  padding: 1.25rem 0 1.25rem 1.6rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.outcome-card::before {
+  position: absolute;
+  top: 1.7rem;
+  left: 0;
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  background: var(--primary-color);
+  content: "";
+}
+
+.outcome-card:first-child {
+  border-top-color: var(--primary-color);
+}
+
+.outcome-heading {
   display: flex;
-  flex-direction: column;
-  padding: 1.35rem;
-  border: 1px solid var(--border-color);
-  border-radius: 8px;
-  background: var(--bg-1, rgba(128, 128, 128, 0.06));
-  transition: border-color 0.2s ease, transform 0.2s ease;
-}
-
-.outcome-card:hover {
-  border-color: var(--primary-color);
-  transform: translateY(-2px);
-}
-
-.outcome-label {
-  margin: 0;
-  color: var(--primary-color);
-  font-family: var(--header-font);
-  font-size: 0.76em;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.75rem;
 }
 
 .outcome-card h3 {
-  margin: 0.45rem 0 0.8rem;
+  margin: 0;
   font-size: 1.3rem;
 }
 
@@ -288,7 +289,15 @@ code::selection {
   content: "";
 }
 
+.outcome-label {
+  order: 2;
+  margin: 0;
+  color: var(--text-2);
+  font-size: 0.95em;
+}
+
 .outcome-card > p:not(.outcome-label) {
+  max-width: 48rem;
   margin-bottom: 1rem;
   color: var(--text-1);
 }
@@ -296,20 +305,22 @@ code::selection {
 .outcome-links {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.75rem 1rem;
-  margin-top: auto;
+  gap: 0.9rem;
+  margin-top: 0.8rem;
 }
 
 .outcome-links a {
   font-family: var(--header-font);
-  font-size: 0.88em;
+  font-size: 0.9em;
   font-weight: 600;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.25em;
+  transition: background-color 160ms ease, color 160ms ease;
 }
 
-@media (max-width: 700px) {
-  .outcomes-grid {
-    grid-template-columns: 1fr;
-  }
+.outcome-links a:hover {
+  background-color: var(--primary-color) !important;
+  color: var(--hover-color) !important;
 }
 
 /* Projects page */
