@@ -55,4 +55,4 @@ This coordination allows us to reduce the time taken further to about 9 seconds,
 
 This was a journey where I got hands-on with some general performance improvements for database writes and also implemented the common but very effective Producer-Consumer design pattern. I am sure that there are things that I missed and certain aspects that can be handled better, I’ll be keeping an eye out for any improvements.
 
-It was a great learning and experimental experience for me, and I hope that this made a good read for you. Please do not hesitate to [email me](mailto:dhruvahuja2k@gmail.com/ "mailto:dhruvahuja2k@gmail.com/") if you wish to discuss anything. I will be adding comments functionality to the site soon.
+It was a great learning and experimental experience for me, and I hope that this made a good read for you. Please do not hesitate to [email me](mailto:dhruvahuja2k@gmail.com) if you wish to discuss anything. I will be adding comments functionality to the site soon.

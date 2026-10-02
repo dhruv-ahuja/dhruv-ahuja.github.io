@@ -33,7 +33,7 @@ There are only three inputs:
 
 - `url` of the webpage to be translated (mandatory),
 - `name` defines the name to save the document by, defaulting to the OpenGraph page title if none is provided, and
-- `cache` defines whether the crawler should use use cached webpage data for the given URL, defaulting to `True`.
+- `cache` defines whether the crawler should use cached webpage data for the given URL, defaulting to `True`.
 
 The web crawler extracts the webpage content, which the LLM then translates using the above structure, and the resultant document is saved to the output directory. Crawled data and its translation are also persisted in a Postgres database.
 
@@ -78,7 +78,7 @@ docker run --env-file .env.deploy --network app-network --rm dhruvahuja/py_ai_tr
 ```
 
 The `app-network` Docker network connects the app to a shared Postgres instance, which stores crawled content, translated outputs, and metadata for future reference.
-A simple [Markdown Viewer Node webapp](https://feed.dhruvahuja.me/files) scans the output directory and lists all translated documents along with `#public` tagged notes, making them accessible via a clean web UI.
+A simple Markdown Viewer Node webapp scans the output directory and lists all translated documents along with `#public` tagged notes, making them accessible via a clean web UI.
 
 _Sample document output in the Markdown Viewer app, where `example.md` is the translated document_
 ![Sample document output in the Markdown Viewer app, where `example.md` is the translated document](/images/ai_translation/markdown_viewer.png)
@@ -89,4 +89,4 @@ I have enjoyed working on the application and the surrounding tooling that I’v
 
 In this case, I did not have to learn Node syntax to prepare a functional script, while acutely reviewing and understanding the rationale behind the code. I similarly wrote a toy Go app to backup my VPS’ crucial data to S3 with certain conditions, in a couple hours.
 
-Finally, I’ll be relearning Spanish through content I enjoy. I am deferring improvements to the code or the features, as it’s time to actually use I’ve built!
+Finally, I’ll be relearning Spanish through content I enjoy. I am deferring improvements to the code or the features, as it’s time to actually use what I’ve built!
